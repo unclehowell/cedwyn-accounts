@@ -41,7 +41,7 @@ footer{max-width:1080px;margin:10px auto 40px;padding:0 14px;font-size:12px;colo
 .txc .d{font-size:12px;color:var(--mut)}
 
 :where(a,button,input,select,textarea,[role="button"],[tabindex]):focus-visible{outline:3px solid var(--s);outline-offset:3px;border-radius:3px}
-</style><script src="https://bucklerfamily.estate/ghf-lang/ghf-boot.js?v=2.1.2"></script>
+.ft{display:inline-block;padding:1px 6px;border-radius:9px;font-size:12px;font-weight:600;white-space:nowrap}.fy{background:#e3f6e6;color:#17692b}.fn{background:#fde6e4;color:#a1251b}.fa,.fc{background:#ececec;color:#555}.fd summary{cursor:pointer;font-size:12px;opacity:.75}</style><script src="https://bucklerfamily.estate/ghf-lang/ghf-boot.js?v=2.1.2"></script>
 </head><body>
 <div class="band"></div>
 <header><h1 style="position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0" data-ghf-title>Counting House</h1><p>Public accounts of the Great House Farm (Tŷ Mawr) project · read-only · no login</p>
@@ -78,8 +78,9 @@ footer{max-width:1080px;margin:10px auto 40px;padding:0 14px;font-size:12px;colo
 <p class="note">More: <a href="/research/new-in-the-catalogue/">new catalogue entries</a> · <a href="/infographic/title-chain/">the title chain, step by step</a> · <a href="/story/museum/">the museum tour</a>. Download: <a href="ledger/farm.beancount">farm memo (Beancount)</a>.</p></section>
 <section id="quotes"><h2>Quotes and estimates, not paid</h2>
 <p class="note">Fees and paid-copy offers that bodies quoted in reply to requests for records, with our own estimates of published fees beside them. Every line is a quote, not paid: none of it is spent money, and it is kept apart from the cash accounts above and never added to them. The amount is the headline figure as quoted (one unit); the full price, VAT and the source are on each line.</p>
+<p class="note">Free first? marks whether the free allowance the law gives came before any fee: under the Freedom of Information Act 2000 a request is answered free up to the cost limit (£600, or 24 hours at £25 an hour, for central government; £450, or 18 hours, for other bodies), apart from copying and postage, and a body that refuses for cost must give advice on narrowing it (sections 12 and 16); under the Environmental Information Regulations 2004 a reasonable charge is allowed, but never for examining the information in place (regulation 8). ✅ given first · ❌ not given · n/a not FOI, or a copy or statutory fee (the free route is noted) · ? not checked.</p>
 <div class="grid" id="qcards"></div>
-<table class="tx-d"><thead><tr><th>Date</th><th>What</th><th>Body</th><th class="num">Amount</th><th>Source</th></tr></thead><tbody id="quoteb"></tbody></table><div class="tx-m" id="quotem"></div>
+<table class="tx-d"><thead><tr><th>Date</th><th>What</th><th>Body</th><th class="num">Amount</th><th>Free first?</th><th>Source</th></tr></thead><tbody id="quoteb"></tbody></table><div class="tx-m" id="quotem"></div>
 <p class="note">Download: <a href="ledger/quotes.beancount">quotes memo (Beancount)</a>.</p></section>
 <section id="now"><h2>Current costs of delay, 2025 to today</h2>
 <p class="note">Research costs from 2025 to today that follow from late replies, missing replies and unanswered internal reviews. Time is valued at £24 an hour, the published rate for a litigant in person who cannot prove financial loss (Civil Procedure Rules, Practice Direction 46, paragraph 3.4). Rows marked “to confirm” are dated events whose hours or amount are not yet on file; they carry no value until they are. This is a dated record for an Ombudsman redress request or a costs schedule, not an invoice. Fees paid to obtain records stay under Costs of disclosure above and are not counted twice.</p>
@@ -173,13 +174,15 @@ fcards.innerHTML=card("Lines in the record",F.length)+card("With a figure on fil
 farmb.innerHTML=F.map(r=>`<tr><td>${esc(r.date_text||r.date)}</td><td><b>${esc(r.item)}</b><br><span class="note">${esc(r.note)}</span></td><td>${esc(r.party)}</td><td class="num">${amt(r)}</td><td>${evl(r.evidence)}</td></tr>`).join("");
 farmm.innerHTML=F.map(r=>`<div class="txc"><span class="a">${r.gap?"GAP":esc(r.amount_text)}</span><b>${esc(r.item)}</b><div class="d">${esc(r.date_text||r.date)} · ${esc(r.party)}</div><div class="note">${esc(r.note)} · ${evl(r.evidence)}</div></div>`).join("")})();
 (()=>{const Q=D.quotes||[];if(!Q.length){document.querySelector('nav button[data-t="quotes"]')?.remove();return}
-const qq=Q.filter(r=>r.kind==="quoted"),fig=qq.filter(r=>!r.no_figure),est=Q.filter(r=>r.kind!=="quoted"),sum=a=>a.reduce((s,r)=>s+r.gbp,0);
+const qq=Q.filter(r=>r.kind!=="estimate"),fig=qq.filter(r=>!r.no_figure),est=Q.filter(r=>r.kind==="estimate"),sum=a=>a.reduce((s,r)=>s+r.gbp,0);
 const gbp=n=>"£"+n.toLocaleString("en-GB",{minimumFractionDigits:2,maximumFractionDigits:2});
 const evq=a=>a.map(e=>/^EV-\d+$/.test(e)?`<a href="/catalogue/?id=${esc(e)}">${esc(e)}</a>`:esc(e)).join(" ");
+const FT={yes:["✅","free allowance given first","fy"],no:["❌","free allowance not given first","fn"],na:["n/a","not FOI, or a copy or statutory fee","fa"],nc:["?","not checked","fc"]};
+const ft=r=>{const t=FT[r.free]||FT.nc;const b=esc(r.free_regime+": "+r.free_basis+" Free route: "+r.free_route);return `<span class="ft ${t[2]}" title="${b}">${t[0]} ${esc(t[1])}</span><br><span class="note">${esc(r.free_regime)}${r.free_url?` · <a href="${esc(r.free_url)}">law</a>`:""}</span><details class="fd"><summary>why</summary><span class="note">${esc(r.free_basis)} Free route: ${esc(r.free_route)}</span></details>`};
 const qa=r=>r.no_figure?`<b>no figure</b>`:`${gbp(r.gbp)}<br><span class="note">${esc(r.unit)}</span>`;
-qcards.innerHTML=card("Quotes from bodies",qq.length)+card("Headline total quoted",gbp(sum(fig)))+card("Our estimates",gbp(sum(est)))+card("Paid","£0.00");
-quoteb.innerHTML=Q.map(r=>`<tr><td>${esc(r.date)}</td><td><b>${esc(r.record)}</b><br><span class="note">${esc(r.price_text)} · VAT: ${esc(r.vat||"not stated")} · ${r.kind==="quoted"?"quote":"estimate"}, not paid</span></td><td>${esc(r.body)}</td><td class="num">${qa(r)}</td><td>${evq(r.evidence)}</td></tr>`).join("");
-quotem.innerHTML=Q.map(r=>`<div class="txc"><span class="a">${r.no_figure?"no figure":gbp(r.gbp)}</span><b>${esc(r.record)}</b><div class="d">${esc(r.date)} · ${esc(r.body)}</div><div class="note">${esc(r.price_text)} · VAT: ${esc(r.vat||"not stated")} · ${r.kind==="quoted"?"quote":"estimate"}, not paid · ${evq(r.evidence)}</div></div>`).join("")})();
+qcards.innerHTML=card("Quotes from bodies",qq.length)+card("Headline total quoted",gbp(sum(fig)))+card("Our estimates",gbp(sum(est)))+card("Paid","£0.00")+card("Free allowance first",`✅ ${Q.filter(r=>r.free==="yes").length} · ❌ ${Q.filter(r=>r.free==="no").length} · n/a ${Q.filter(r=>r.free==="na").length} · ? ${Q.filter(r=>r.free==="nc").length}`);
+quoteb.innerHTML=Q.map(r=>`<tr><td>${esc(r.date)}</td><td><b>${esc(r.record)}</b><br><span class="note">${esc(r.price_text)} · VAT: ${esc(r.vat||"not stated")} · ${r.kind==="estimate"?"estimate":"quote"}, not paid</span></td><td>${esc(r.body)}</td><td class="num">${qa(r)}</td><td>${ft(r)}</td><td>${evq(r.evidence)}</td></tr>`).join("");
+quotem.innerHTML=Q.map(r=>`<div class="txc"><span class="a">${r.no_figure?"no figure":gbp(r.gbp)}</span><b>${esc(r.record)}</b><div class="d">${esc(r.date)} · ${esc(r.body)}</div><div class="note">${esc(r.price_text)} · VAT: ${esc(r.vat||"not stated")} · ${r.kind==="estimate"?"estimate":"quote"}, not paid · ${evq(r.evidence)}</div><div>${ft(r)}</div></div>`).join("")})();
 gen.textContent="Built "+D.generated+" from the plain-text ledger.";
 </script>
 </body></html>

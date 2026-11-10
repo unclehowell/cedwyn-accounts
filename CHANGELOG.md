@@ -1,5 +1,14 @@
 # Changelog — Counting House public accounts
 
+## [0.4.0] - 2026-11-10
+
+### Added
+- Free-allowance check on every quote (“Free first?”): ✅ the free allowance the law gives came before the fee · ❌ not given · n/a not FOI, or a copy or statutory fee (free route noted) · ? not checked. Each line carries the regime, a short legal basis and a link to the provision on legislation.gov.uk (`free`, `free_regime`, `free_basis`, `free_route`, `free_url` in `quotes.beancount` and `data.json`). Count today: ✅ 8 · ❌ 2 · n/a 15 · ? 2.
+- Three new lines: Llandough Community Council cost-limit refusal (11 Oct 2026, £450 / 18 h), Cabinet Office cost-limit reply (10 Nov 2026, £600 / 24 h), and a private copy-ordering website's title-register and title-plan prices (21 Sep 2026). Headline total quoted £681.19.
+
+### Changed
+- Cost-limit replies count with the quotes from bodies; estimates stay apart.
+
 ## [0.3.0] - 2026-11-10
 
 ### Added

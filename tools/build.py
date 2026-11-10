@@ -93,7 +93,9 @@ def main():
                 "kind": e.meta.get("kind", p.account.split(":")[-1].lower()), "gbp": float(p.units.number), "currency": p.units.currency,
                 "price_text": e.meta.get("price_text", ""), "unit": e.meta.get("unit", ""), "vat": e.meta.get("vat", ""),
                 "status": e.meta.get("status", "quote, not paid"), "evidence": [x.strip() for x in str(e.meta.get("evidence", "")).split(",") if x.strip()],
-                "no_figure": e.flag == "!"})
+                "no_figure": e.flag == "!",
+                "free": e.meta.get("free", "nc"), "free_regime": e.meta.get("free_regime", ""), "free_basis": e.meta.get("free_basis", ""),
+                "free_route": e.meta.get("free_route", ""), "free_url": e.meta.get("free_url", "")})
         quotes.sort(key=lambda r: (r["date"], r["id"]))
     case_costs = round(sum(r["gbp"] for r in rows if r["account"].startswith("Expenses")), 2)
     # #costs: costs of pursuit by category; must reconcile with money out and with bean-query's Expenses totals

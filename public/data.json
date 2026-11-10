@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25 23:09 UTC",
+ "generated": "2026-11-10 21:49 UTC",
  "period": "1 Apr 2025 – today",
  "balance": 0.0,
  "income": 0,
@@ -101,6 +101,11 @@
   },
   {
    "m": "2026-10",
+   "in": 0.0,
+   "out": 0.0
+  },
+  {
+   "m": "2026-11",
    "in": 0.0,
    "out": 0.0
   }
@@ -875,6 +880,425 @@
    "status": "GAP",
    "note": "Costs orders not on file",
    "gap": true
+  }
+ ],
+ "quotes": [
+  {
+   "id": "PW-01",
+   "date": "2025-11-26",
+   "body": "RCAHMW (Royal Commission)",
+   "record": "High-resolution scans of microfiche and archive material (Great House Farm holdings)",
+   "kind": "quoted",
+   "gbp": 20.0,
+   "currency": "GBP",
+   "price_text": "£20 per high-resolution scan",
+   "unit": "per scan",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-0930",
+    "EV-1067"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-04",
+   "date": "2026-02-06",
+   "body": "Glamorgan Archives",
+   "record": "Digital images of catalogued items (online order form)",
+   "kind": "quoted",
+   "gbp": 15.6,
+   "currency": "GBP",
+   "price_text": "£15.60 first image, £4.80 each further image; £60.00 per hour for multiple documents",
+   "unit": "first image",
+   "vat": "included",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-0970",
+    "EV-1386"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-05",
+   "date": "2026-05-29",
+   "body": "Glamorgan Archives",
+   "record": "Digital copies of any relevant records found (2026/2370)",
+   "kind": "quoted",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "quote offered, no figure given",
+   "unit": "",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1069"
+   ],
+   "no_figure": true
+  },
+  {
+   "id": "PW-02",
+   "date": "2026-06-10",
+   "body": "RCAHMW (Royal Commission)",
+   "record": "Document summary service",
+   "kind": "quoted",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "per price list (figure not given in the reply)",
+   "unit": "",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1121"
+   ],
+   "no_figure": true
+  },
+  {
+   "id": "PW-06",
+   "date": "2026-06-15",
+   "body": "Glamorgan Archives",
+   "record": "Digital copy of a newspaper extract",
+   "kind": "quoted",
+   "gbp": 19.5,
+   "currency": "GBP",
+   "price_text": "£19.50 (scanned image £3.40 + VAT, reproduction £12.85 + VAT)",
+   "unit": "one item",
+   "vat": "included in the £19.50 total",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1142"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-07",
+   "date": "2026-08-21",
+   "body": "Glamorgan Archives",
+   "record": "Copy certificates (two family records, 1990)",
+   "kind": "quoted",
+   "gbp": 12.5,
+   "currency": "GBP",
+   "price_text": "£38.50 next day or £12.50 standard post",
+   "unit": "standard copy",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1332",
+    "EV-1404"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-08",
+   "date": "2026-08-24",
+   "body": "Glamorgan Archives",
+   "record": "Staff research in burial and parish register entries",
+   "kind": "quoted",
+   "gbp": 60.0,
+   "currency": "GBP",
+   "price_text": "£60 (including VAT) for up to one hour, payable in advance",
+   "unit": "per hour",
+   "vat": "included",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1350"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-09",
+   "date": "2026-09-14",
+   "body": "Glamorgan Archives",
+   "record": "Copy of DBDT79/1 (1877 lease) and its plan",
+   "kind": "quoted",
+   "gbp": 15.6,
+   "currency": "GBP",
+   "price_text": "£15.60 inclusive of VAT",
+   "unit": "one copy",
+   "vat": "included",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1412"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-10",
+   "date": "2026-09-24",
+   "body": "Glamorgan Archives",
+   "record": "Staff search of rate books UC/73/1–5 and later volumes, with copies of entries",
+   "kind": "quoted",
+   "gbp": 50.0,
+   "currency": "GBP",
+   "price_text": "£50 including copies of relevant entries",
+   "unit": "one search",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1468"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-11",
+   "date": "2026-09-24",
+   "body": "Glamorgan Archives",
+   "record": "Staff search of planning minutes for 1992/00671/RES and what they lead to",
+   "kind": "quoted",
+   "gbp": 50.0,
+   "currency": "GBP",
+   "price_text": "£50 including copies of relevant pages",
+   "unit": "one search",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1468"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-03",
+   "date": "2026-09-29",
+   "body": "RCAHMW (Royal Commission)",
+   "record": "Aerial photograph searches and further searches (list of air-photo sorties; complex enquiries)",
+   "kind": "quoted",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "charged search, per price list (scans free for orders under five)",
+   "unit": "",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1539",
+    "EV-1587",
+    "EV-1833",
+    "EV-1999"
+   ],
+   "no_figure": true
+  },
+  {
+   "id": "PW-15",
+   "date": "2026-10-10",
+   "body": "ITV Archive",
+   "record": "Digital copies of programmes from the archive",
+   "kind": "quoted",
+   "gbp": 70.0,
+   "currency": "GBP",
+   "price_text": "£70 up to 15 min; £95 up to 30 min; £145 up to 60 min; £195 up to 90 min; £245 over 90 min, per programme",
+   "unit": "per programme, shortest band",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1635",
+    "EV-1903"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-16",
+   "date": "2026-10-12",
+   "body": "The National Archives",
+   "record": "Search for the Valuation Office Survey 1910 entries (OS Glamorgan)",
+   "kind": "quoted",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "paid search under the Public Records Act fees regulations, no figure given",
+   "unit": "",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1647"
+   ],
+   "no_figure": true
+  },
+  {
+   "id": "PW-18",
+   "date": "2026-10-12",
+   "body": "Companies House",
+   "record": "Archive documents for Mountjoy Ltd (1926) and later companies (COH2382411X)",
+   "kind": "quoted",
+   "gbp": 3.0,
+   "currency": "GBP",
+   "price_text": "£3 per document; £9 per pre-1973 accounts or annual return; £20 archive DVD",
+   "unit": "per document",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1641",
+    "EV-1929"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-17",
+   "date": "2026-10-15",
+   "body": "Mount Stuart (Bute archive)",
+   "record": "Research visit to the Bute Estate (Glamorgan) records",
+   "kind": "quoted",
+   "gbp": 20.0,
+   "currency": "GBP",
+   "price_text": "£20 per day for research visits",
+   "unit": "per day",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1681"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-E1",
+   "date": "2026-10-18",
+   "body": "HM Land Registry",
+   "record": "Official copies of the register and title plan for the titles under INSPIRE 16823075, 16800052, 16777276 and 16800053",
+   "kind": "estimate",
+   "gbp": 56.0,
+   "currency": "GBP",
+   "price_text": "£7 per document (published fee, our notes of 18 Oct 2026, not re-checked); 4 titles × 2 documents",
+   "unit": "8 documents",
+   "vat": "none (statutory fee)",
+   "status": "quote, not paid",
+   "evidence": [
+    "our notes"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-13",
+   "date": "2026-10-22",
+   "body": "Glamorgan Archives",
+   "record": "Search of the closed 1988 Weekly Orders (South Wales Constabulary records)",
+   "kind": "quoted",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "paid search offered, no figure given",
+   "unit": "",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1800"
+   ],
+   "no_figure": true
+  },
+  {
+   "id": "PW-14",
+   "date": "2026-10-23",
+   "body": "Cardiff Central Library",
+   "record": "Scan of Bute X.6(12) (1877 trustee accounts) via Glamorgan Archives; detailed research",
+   "kind": "quoted",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "scan cost via Glamorgan Archives; research charged, no figure given",
+   "unit": "",
+   "vat": "not stated",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1816"
+   ],
+   "no_figure": true
+  },
+  {
+   "id": "PW-19",
+   "date": "2026-11-05",
+   "body": "British Geological Survey",
+   "record": "PDF copies of mine and borehole plans (IDA 312230)",
+   "kind": "quoted",
+   "gbp": 12.0,
+   "currency": "GBP",
+   "price_text": "£12 + VAT per plan, or £18 + VAT where a hard copy must be scanned",
+   "unit": "per plan",
+   "vat": "plus VAT",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-2028"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-12",
+   "date": "2026-11-06",
+   "body": "Glamorgan Archives",
+   "record": "Staff searches of the remaining references (2026/4097): UC/73/1–5, DCVG/C/4/36, D696, DBDT/18/1, DBDT/79/1, ACA/8/2, estimated 1–3 hours each",
+   "kind": "quoted",
+   "gbp": 50.0,
+   "currency": "GBP",
+   "price_text": "£50 an hour plus VAT, including a digitised image of any item found",
+   "unit": "per hour",
+   "vat": "plus VAT",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-1568",
+    "EV-2039"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-E3",
+   "date": "2026-11-06",
+   "body": "Glamorgan Archives",
+   "record": "Research in the printed Cardiff Borough Council minutes BC/C/6/78–80 (Nov 1939–Nov 1942)",
+   "kind": "estimate",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "at the £50 an hour plus VAT search rate (6 Nov 2026 quote); hours not estimated; free to view in person",
+   "unit": "per hour",
+   "vat": "plus VAT",
+   "status": "quote, not paid",
+   "evidence": [
+    "EV-2039"
+   ],
+   "no_figure": true
+  },
+  {
+   "id": "PW-20",
+   "date": "2026-11-10",
+   "body": "RICS Library",
+   "record": "RICS Year Books 1969–1993 (25 annual directory volumes)",
+   "kind": "quoted",
+   "gbp": 250.0,
+   "currency": "GBP",
+   "price_text": "£10 + VAT per item retrieved, up to £250 + VAT for 25 volumes; scanning £15 + VAT per item up to 15 pages, £13 + VAT per further 15 pages; day pass £18 + VAT",
+   "unit": "25 volumes, retrieval only",
+   "vat": "plus VAT",
+   "status": "quote, not paid",
+   "evidence": [
+    "reply of 2026-11-10"
+   ],
+   "no_figure": false
+  },
+  {
+   "id": "PW-E2",
+   "date": "2026-11-10",
+   "body": "The National Archives",
+   "record": "Copies of BD 28/89, HLG 49/704 and LT 13/3048",
+   "kind": "estimate",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "copy order fee not yet quoted (free to view at Kew)",
+   "unit": "",
+   "vat": "",
+   "status": "quote, not paid",
+   "evidence": [
+    "our notes"
+   ],
+   "no_figure": true
+  },
+  {
+   "id": "PW-E4",
+   "date": "2026-11-10",
+   "body": "Holder not confirmed (council deed packets or HM Land Registry)",
+   "record": "The April 1942 conveyance and its plan, and the 29 March 1961 deed (GHF-E129)",
+   "kind": "estimate",
+   "gbp": 0.0,
+   "currency": "GBP",
+   "price_text": "no price quoted; asked for in the Cardiff request of 10 Nov 2026",
+   "unit": "",
+   "vat": "",
+   "status": "quote, not paid",
+   "evidence": [
+    "our notes"
+   ],
+   "no_figure": true
   }
  ],
  "case_costs": 211.93,

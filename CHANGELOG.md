@@ -1,5 +1,14 @@
 # Changelog — Counting House public accounts
 
+## [0.3.0] - 2026-11-10
+
+### Added
+- `ledger/quotes.beancount`: quotes and estimates received for copies, searches and records — 20 fee or paid-copy offers quoted by bodies and 4 of our own estimates, each with its price as written, VAT, date and source. Every line is "quote, not paid"; offers without a figure are flagged ! at £0.00. Kept apart from the cash accounts; never added to them.
+- New tab “Quotes, not paid” (`#quotes`), built by `tools/build.py` into `data.json` (`quotes`).
+
+### Unchanged
+- Cash ledger, totals, the farm money memo and the held redress memo.
+
 ## [0.2.0] - 2026-10-25
 
 ### Added

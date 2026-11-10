@@ -13,6 +13,7 @@ from beanquery import query as bq
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUB = os.path.join(ROOT, "public"); os.makedirs(PUB, exist_ok=True)
 MAIN = os.path.join(ROOT, "ledger", "main.beancount"); FARM = os.path.join(ROOT, "ledger", "farm.beancount")  # the farm's historic money record (memo, never mixed with cash)
+QUOTES = os.path.join(ROOT, "ledger", "quotes.beancount")  # quotes and estimates received for copies and searches (memo, never paid, never mixed with cash)
 MEMO = os.path.join(ROOT, "ledger", "claimed.beancount")  # absent until the reopen trigger is met (tools/sync_ledgers.py)
 
 PROVIDER = {"OpenAI": "OpenAI", "Anthropic": "Anthropic", "ElevenLabs": "ElevenLabs", "Groq": "Groq", "XAI": "xAI (Grok)"}
@@ -81,6 +82,19 @@ def main():
                 "evidence": [x.strip() for x in str(e.meta.get("evidence", "")).split(",") if x.strip()], "status": e.meta.get("status", ""),
                 "note": e.meta.get("note", ""), "gap": e.flag == "!"})
         farm.sort(key=lambda r: r["date"])
+    quotes = []
+    if os.path.exists(QUOTES):   # memorandum: fee or paid-copy offers from bodies, and our estimates; status "quote, not paid"; no figure -> flag ! at 0.00
+        qe, qerr, _ = loader.load_file(QUOTES)
+        if qerr: raise SystemExit("quotes ledger errors: %r" % qerr[:3])
+        for e in qe:
+            if not isinstance(e, data.Transaction): continue
+            p = [x for x in e.postings if x.account.startswith("Quoted:")][0]
+            quotes.append({"id": e.meta.get("id", ""), "date": e.date.isoformat(), "body": e.payee or "", "record": e.narration,
+                "kind": e.meta.get("kind", p.account.split(":")[-1].lower()), "gbp": float(p.units.number), "currency": p.units.currency,
+                "price_text": e.meta.get("price_text", ""), "unit": e.meta.get("unit", ""), "vat": e.meta.get("vat", ""),
+                "status": e.meta.get("status", "quote, not paid"), "evidence": [x.strip() for x in str(e.meta.get("evidence", "")).split(",") if x.strip()],
+                "no_figure": e.flag == "!"})
+        quotes.sort(key=lambda r: (r["date"], r["id"]))
     case_costs = round(sum(r["gbp"] for r in rows if r["account"].startswith("Expenses")), 2)
     # #costs: costs of pursuit by category; must reconcile with money out and with bean-query's Expenses totals
     costs = sorted([[k, round(v, 2)] for k, v in bycat.items()], key=lambda x: -x[1])
@@ -95,13 +109,13 @@ def main():
         "byprov": sorted([[k, round(v, 2)] for k, v in byprov.items()], key=lambda x: -x[1]),
         "funded": round(-by_account.get("Liabilities:Funded:Family", 0.0), 2), "payable": round(-sum(v for k, v in by_account.items() if k.startswith("Liabilities:Payable")), 2),
         "coins_liability": round(-by_account.get("Liabilities:Coins:Unspent", 0.0), 2), "coins_income": round(-by_account.get("Income:Coins:Stripe", 0.0), 2),
-        "rows": rows, "claimed": claimed, "farm": farm, "case_costs": case_costs, "costs": costs, "by_account": by_account}
+        "rows": rows, "claimed": claimed, "farm": farm, "quotes": quotes, "case_costs": case_costs, "costs": costs, "by_account": by_account}
     json.dump(out, open(os.path.join(PUB, "data.json"), "w"), indent=1, ensure_ascii=False)
     with open(os.path.join(PUB, "ledger.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f); w.writerow(["ref", "date", "payee", "description", "account", "category", "provider", "amount_gbp", "original", "fx", "status", "class"])
         for r in rows: w.writerow([r["ref"], r["date"], r["payee"], r["narration"], r["account"], r["category"], r["provider"], f'{r["gbp"]:.2f}', r["original"], r["fx"], r["status"], r["class"]])
     os.makedirs(os.path.join(PUB, "ledger"), exist_ok=True)
-    for fn in ("main.beancount", "claimed.beancount", "farm.beancount"):
+    for fn in ("main.beancount", "claimed.beancount", "farm.beancount", "quotes.beancount"):
         if os.path.exists(os.path.join(ROOT, "ledger", fn)): shutil.copy(os.path.join(ROOT, "ledger", fn), os.path.join(PUB, "ledger", fn))
     tpl = open(os.path.join(ROOT, "tools", "template.html"), encoding="utf-8").read()
     open(os.path.join(PUB, "index.html"), "w", encoding="utf-8").write(tpl.replace("/*__DATA__*/null", json.dumps(out, ensure_ascii=False)))

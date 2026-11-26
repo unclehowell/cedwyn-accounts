@@ -13,7 +13,9 @@
     "A limitation date must be verified for the particular cause of action. Do not rely on Limitation Act 1980 section 32 as an automatic extension.",
     "The 1987/1989 historical redress memorandum and its separate reopening gate are outside this workbench.",
     "FOIA section 12 cost calculation is a separate authority-side measure: £25 per staff hour and the appropriate limit (£450 for most public authorities, £600 for central government). It is not a requester's hourly rate or compensation.",
-    "There is no general half-solicitor-rate entitlement for private citizens. The £24 litigant-in-person rate is the specific CPR 46.5 / PD46 litigation-costs rule, not a requester hourly tariff."
+    "There is no general half-solicitor-rate entitlement for private citizens. The £24 litigant-in-person rate is the specific CPR 46.5 / PD46 litigation-costs rule, not a requester hourly tariff.",
+    "For UK central government maladministration, consider PHSO only after the body's complaint process; government department referrals normally require an MP and usually within one year. PHSO financial-remedy bands are discretionary guidance for proven injustice, not a requester tariff.",
+    "Police complaint oversight through the IOPC is not a compensation route. A money claim must be addressed to the force and have an independent civil cause of action."
   ],
   "nominal_codes": [
     {
@@ -361,6 +363,46 @@
         {
           "label": "CPR Part 27 — small claims track and costs",
           "url": "https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part27"
+        }
+      ]
+    },
+    {
+      "id": "phso",
+      "name": "Public Service Ombudsman — UK government departments and public bodies",
+      "money": "Where maladministration or service failure caused injustice, the Ombudsman may recommend a proportionate financial remedy. Its published non-financial-loss severity scale (last updated 30 September 2026) ranges from £0 at level 1, £120–£550 at level 2, £600–£1,200 at level 3, £1,250–£3,700 at level 4, £3,750–£12,450 at level 5, and £12,500+ at level 6. These are Ombudsman recommendation bands, not an automatic tariff, a private invoice or an award for each month of FOI delay. Direct financial loss is assessed separately and must be evidenced.",
+      "route": "For a qualifying UK government department or public body (including the Ministry of Justice, Ministry of Defence and The National Archives where listed), complete the body's complaint process and obtain its final response. A complaint about a government department normally has to be referred to PHSO by an MP. Check the organisation and subject against the current jurisdiction list; FOI/EIR appeal routes may be more appropriate for access-rights issues.",
+      "time_limit": "Usually refer the complaint to the MP within 12 months of becoming aware of the problem; PHSO may allow flexibility for good reasons. This is separate from ICO six-week guidance, tribunal deadlines and civil limitation periods.",
+      "evidence": "Final complaint response, chronology, specific maladministration/service failure, the injustice caused (distress, inconvenience, time and trouble beyond normal expectation, direct financial loss), impact duration and evidence, steps already taken and the date of awareness.",
+      "sources": [
+        {
+          "label": "PHSO — financial remedy and severity scale (updated 30 Sep 2026)",
+          "url": "https://www.ombudsman.org.uk/handling-complaint/information-organisations-we-investigate/putting-things-right/financial-remedy"
+        },
+        {
+          "label": "PHSO — organisations it can investigate",
+          "url": "https://www.ombudsman.org.uk/making-complaint/what-we-can-and-cant-help/government-organisations-we-can-investigate/p"
+        },
+        {
+          "label": "House of Commons Library — PHSO MP filter and time limits",
+          "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10788/"
+        }
+      ]
+    },
+    {
+      "id": "police-complaints",
+      "name": "Police complaints / IOPC — non-financial accountability route",
+      "money": "The IOPC expressly does not handle compensation claims. A police complaint may lead to explanation, apology, learning or review, but it does not itself create a financial entitlement. Any financial claim must be addressed to the police force and depend on a separate cause of action, proven loss and limitation.",
+      "route": "Use the force's complaints / Professional Standards Department first. The IOPC may receive and refer complaints and independently investigates only the most serious and sensitive matters; it does not award compensation. If there is a separate civil claim, contact the force or its solicitors and assess that claim independently.",
+      "time_limit": "There is no general time limit for making a police complaint, but complaints more than 12 months after the incident should explain the delay and may not be investigated. A review or appeal after the complaint outcome is normally within 28 days where the right applies. Civil limitation is a separate clock.",
+      "evidence": "Complaint and force reference, exact conduct complained of, service/outcome letters, decision and review deadline, and a separately evidenced loss/cause of action if a financial claim is contemplated.",
+      "sources": [
+        {
+          "label": "IOPC — guide to the complaints process and financial claims",
+          "url": "https://www.policeconduct.gov.uk/complaints/guide-to-complaints-process"
+        },
+        {
+          "label": "IOPC FAQs — compensation claims",
+          "url": "https://www.policeconduct.gov.uk/frequently-asked-questions"
         }
       ]
     }

@@ -264,9 +264,10 @@
       return '<tr><td><input type="checkbox" class="r-pick" value="' + esc(e.id) + '" aria-label="Select ' + esc(e.title) + '"></td>' +
         '<td>' + esc(e.date || "Date to confirm") + '</td><td><b>' + esc(e.institution) + '</b><br><span class="note">' + esc(e.reference || "") + '</span></td>' +
         '<td>' + esc(e.title) + '<br><span class="note">' + esc(e.source || "") + '</span></td>' +
+        '<td>' + (e.limitationDate ? '<b>Claim limit (verified): ' + esc(e.limitationDate) + '</b>' : e.trackerDeadline ? 'Source response deadline: ' + esc(e.trackerDeadline) : 'Not recorded') + (e.trackerLatestReply ? '<br><span class="note">Latest reply: ' + esc(e.trackerLatestReply) + '</span>' : '') + '</td>' +
         '<td><span class="pill">' + esc(e.status) + '</span></td><td class="num">' + money(e.amount) + '</td>' +
         '<td>' + esc(e.nominalCode || "9900") + '</td><td><button class="r-edit" data-id="' + esc(e.id) + '">Edit</button> <button class="r-delete" data-id="' + esc(e.id) + '">Remove</button></td></tr>';
-    }).join("") || '<tr><td colspan="8">No records match this filter.</td></tr>';
+    }).join("") || '<tr><td colspan="9">No records match this filter.</td></tr>';
     var by = {};
     list.forEach(function (e) {
       var code = e.nominalCode || "9900";
@@ -437,7 +438,7 @@
       '<p class="note">Select entries for one institution to prepare a draft schedule. A formal payment request is enabled only for lines marked accepted, awarded or statutory-confirmed, with a value and supporting evidence.</p>' +
       '<div id="redress-editor" hidden></div>' +
       '<div class="tools"><input id="redress-recipient" type="text" placeholder="Recipient institution for selected entries"><select id="redress-document-type"><option value="proposal">Proposed redress schedule (not a debt)</option><option value="established">Payment demand — established entitlement only</option></select><button class="btn" id="redress-generate">Prepare draft document</button></div>' +
-      '<div style="overflow-x:auto"><table><thead><tr><th>Select</th><th>Date</th><th>Institution / reference</th><th>Event / evidence source</th><th>Status</th><th class="num">Amount</th><th>Code</th><th>Actions</th></tr></thead><tbody id="redress-rows"></tbody></table></div>' +
+      '<div style="overflow-x:auto"><table><thead><tr><th>Select</th><th>Date</th><th>Institution / reference</th><th>Event / evidence source</th><th>Deadline / limitation</th><th>Status</th><th class="num">Amount</th><th>Code</th><th>Actions</th></tr></thead><tbody id="redress-rows"></tbody></table></div>' +
       '<h2>Nominal-code report</h2><p class="note">The report separates proposed/disputed values from agreed/awarded and actually paid amounts. The unclassified £20 cheque is shown in suspense until its remittance reason and clearance are checked. Candidate amounts and conduct events are not posted as cash, income or receivables.</p>' +
       '<div style="overflow-x:auto"><table><thead><tr><th>Nominal code</th><th>Category</th><th class="num">Entries</th><th class="num">Proposed / disputed</th><th class="num">Agreed / awarded</th><th class="num">Paid / cleared</th><th class="num">Unclassified receipt</th></tr></thead><tbody id="redress-report"></tbody></table></div>' +
       '<h2>Accounting rules</h2><ul class="note"><li>Nominal codes are this app’s configurable internal chart, not a prescribed UK-wide numbering scheme. The linked Beancount account is a mapping only.</li><li>9900 is evidence-only; 9910 is proposed/disputed memorandum value. Neither is posted to the cash ledger or a debtor balance.</li><li>Only agreed/awarded/statutorily confirmed items are shown as established in this local report; cash is shown only when marked paid/cleared.</li><li>Actual disclosure/search fees stay in the existing paid-cost ledger and quotes stay in the existing unpaid quote register. Do not count the same expense twice.</li><li>The current-year workbench is separate from the held historical 1987/1989 redress memorandum and does not change its reopening gate.</li></ul>';

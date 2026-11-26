@@ -99,7 +99,7 @@ These are internal categories for this app. They are not a statutory or universa
 
 ## Known current inputs
 
-- Dartboard tracker: the snapshot contains 260 threads / 39 institutions, with a base mailbox cut-off of 18 October 2026 and targeted HMLR / The National Archives additions through 24 November 2026. It is not a fully refreshed all-institution mailbox export.
+- Dartboard CSV: 255 unique conversation rows across 39 institutions; 245 have a 2026 date and 9 are WhatDoTheyKnow-routed rows dated 2026. Its 19 October summary describes 253 conversations (136 FOI/EIR/SAR/internal-review requests), so reconcile the two-row difference before quoting a single total. The base mailbox was read through 18 October 2026; this is not a live inbox or a fully refreshed all-institution export.
 - That Old Chestnut: 25 findings, including negative/restrictive wording and later disclosure/qualification comparisons. These are editorial/evidence leads, not findings of legal fault.
 - Current costs CSV: imports previous 2026 chronology as evidence-only; the previous unsubstantiated £24/hour value text is not adopted.
 - Existing quotes ledger: contains institution-specific copy and staff-search offers. For example, PW-12 is Glamorgan Archives' 6 Nov 2026 £50/hour plus VAT staff search offer, estimated 1–3 hours per reference, with a free searchroom alternative recorded.

@@ -25,3 +25,16 @@ Accounts compiled by Sion's Tab agent from receipts on file; not audited.
 
 - Added visible keyboard-focus indicators for search, filters, links and controls.
 - Exposed the ledger-build timestamp as a polite live status for assistive technology. The timestamp remains the source’s actual build time; a UI rerelease does not mark the accounts data as newly reconciled.
+
+## Current-year disclosure redress workbench (2026)
+
+The Remedies & claims tab is a browser-local working register for FOI, EIR, SAR and complaint events, potential redress routes, evidence references, limitation dates and internal nominal-code reports.
+
+- Import source leads from Dartboard's FOI tracker, That Old Chestnut, and the previous current-costs CSV. Imports remain unpriced evidence leads; they do not establish liability, damages or a debt.
+- Local entries are stored in this browser's localStorage on this device/origin. They are not encrypted, synced, sent to institutions or copied to the public cash ledger. Export a JSON backup before changing devices or clearing browser data.
+- The workbench publishes only the legal rules catalogue and JavaScript. User-entered claim/receipt data remains in the browser. The static published site is not a secure case-management system.
+- Proposed or disputed amounts are memorandum-only. They never become a cash-ledger entry or receivable automatically. A draft payment request is locked until every selected item is marked accepted, awarded or a verified statutory entitlement and has supporting evidence.
+- Nominal codes are internal report labels; they are not a prescribed UK accounting code list or a statement that a cause of action exists.
+- A claim-readiness date is a reminder, not a legal limitation opinion. Limitation, jurisdiction, defendant, accrual, discoverability, longstops and procedural deadlines must be checked for each cause of action.
+
+The 1987/1989 historic redress memorandum remains held and the separate reopening gate remains unchanged. This workbench does not feed that memorandum or change its publication conditions.

@@ -1,5 +1,22 @@
 # Changelog — Counting House public accounts
 
+## [Unreleased] - 2026-11-26
+
+### Added
+- Remedies & claims workbench for current-year (2026) FOI, EIR, SAR, complaint and disclosure-history leads.
+- Legal-route inventory and internal nominal-code map, with separate statuses for evidence-only, proposed/disputed, agreed/awarded, paid/cleared and unclassified receipts.
+- Browser-local entry register, JSON backup, CSV and Beancount memorandum exports, nominal-code report, and guarded draft schedules with codes shown per line. Separate fields display source response/review, regulator/tribunal/Ombudsman, judicial-review and civil limitation dates. Beancount export skips unresolved event dates. No invoices or messages are sent automatically.
+- Import paths for Dartboard's FOI/EIR/SAR tracker, That Old Chestnut findings and the earlier current-costs event list. Imports are unpriced evidence leads, not findings of liability.
+- Internal suspense code 4190 and a local receipt workflow for the Dŵr Cymru £20 cheque; personal cheque data is not preloaded into the public source.
+- Rule catalogue distinguishes CPR 46.5 / PD46's £24/hour litigant-in-person litigation costs rule from FOIA s.12's authority-side £25/hour staff-time calculation. Neither is a general hourly charge for waiting for disclosure.
+- Added PHSO discretionary redress bands, police complaint / IOPC boundary and urgent judicial-review route (promptly and no later than 3 months, subject to statutory exceptions).
+- Existing current-costs chronology retained but its misleading £24/hour valuation removed; repeated chasers are not treated as separate monetary entitlements.
+
+### Safeguards
+- Historic ledger/redress.beancount, ledger/claimed.beancount gate and 1987/1989 reopening workflow are unchanged.
+- The browser-local claim register is not emitted into public/data.json, the public CSV or the cash ledger. Proposed values are memorandum-only and do not create an accounts receivable.
+- A payment-request draft requires a verified/accepted/awarded entitlement, a positive amount and supporting evidence. Nothing is sent from the app.
+
 ## [0.4.0] - 2026-11-10
 
 ### Added

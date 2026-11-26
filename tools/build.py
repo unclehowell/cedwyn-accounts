@@ -119,6 +119,11 @@ def main():
     os.makedirs(os.path.join(PUB, "ledger"), exist_ok=True)
     for fn in ("main.beancount", "claimed.beancount", "farm.beancount", "quotes.beancount"):
         if os.path.exists(os.path.join(ROOT, "ledger", fn)): shutil.copy(os.path.join(ROOT, "ledger", fn), os.path.join(PUB, "ledger", fn))
+    # Browser-local redress workbench: publish only its rules/module, never its local claim data.
+    for src, dst in ((os.path.join(ROOT, "tools", "remedies.js"), os.path.join(PUB, "remedies.js")),
+                     (os.path.join(ROOT, "data", "remedy-rules.json"), os.path.join(PUB, "remedy-rules.json"))):
+        if not os.path.exists(src): raise SystemExit("missing redress workbench asset: " + src)
+        shutil.copyfile(src, dst)
     tpl = open(os.path.join(ROOT, "tools", "template.html"), encoding="utf-8").read()
     open(os.path.join(PUB, "index.html"), "w", encoding="utf-8").write(tpl.replace("/*__DATA__*/null", json.dumps(out, ensure_ascii=False)))
     print("built", len(rows), "rows; spend", out["spend"], "AI", out["ai"], "pending", out["pending"], "costs", case_costs, "claimed", len(claimed))

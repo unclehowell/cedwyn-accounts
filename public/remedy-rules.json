@@ -1,0 +1,367 @@
+{
+  "schema": "cedwyn-redress-rules/1.0",
+  "verified_on": "2026-11-26",
+  "jurisdiction": "England and Wales unless a rule says otherwise",
+  "purpose": "A route inventory and accounting classification aid. It is not a finding of liability, a damages tariff, legal advice or authority to issue an invoice.",
+  "core_controls": [
+    "A missed FOI/EIR/SAR deadline is an evidence event, not by itself a debt owed to the requester.",
+    "Do not apply a private hourly rate to waiting time, FOI chasing, or complaint correspondence.",
+    "CPR 46.5 and Practice Direction 46 paragraph 3.4 are litigation-cost rules: £24/hour is conditional on a court ordering a litigant-in-person's costs and is subject to the two-thirds cap and reasonableness assessment.",
+    "An amount entered as proposed, disputed or estimated remains memorandum-only and is not posted as cash, income or a receivable.",
+    "A receipt, settlement, court award or confirmed statutory payment is classified separately from a proposed claim.",
+    "No delay, late disclosure, narrow interpretation, failed search or refusal is labelled fraud or deliberate concealment without evidence of the required elements.",
+    "A limitation date must be verified for the particular cause of action. Do not rely on Limitation Act 1980 section 32 as an automatic extension.",
+    "The 1987/1989 historical redress memorandum and its separate reopening gate are outside this workbench.",
+    "FOIA section 12 cost calculation is a separate authority-side measure: £25 per staff hour and the appropriate limit (£450 for most public authorities, £600 for central government). It is not a requester's hourly rate or compensation."
+  ],
+  "nominal_codes": [
+    {
+      "code": "4100",
+      "label": "Guaranteed service-standard payment",
+      "beancount_account": "Income:Compensation:GSS",
+      "recognition": "Only after the specific scheme trigger and entitlement are checked; a cheque is cash only when cleared. Never treat a generic FOI/SAR delay as GSS entitlement."
+    },
+    {
+      "code": "4110",
+      "label": "Agreed reimbursement / repayment",
+      "beancount_account": "Income:Compensation:Reimbursement",
+      "recognition": "Only after the institution accepts liability or agrees a specific reimbursement; retain the written acceptance and allocation."
+    },
+    {
+      "code": "4120",
+      "label": "Data-protection compensation",
+      "beancount_account": "Income:Compensation:Data-Protection",
+      "recognition": "Only when settled, admitted or awarded. A UK GDPR infringement alone is insufficient without material or non-material damage caused by it."
+    },
+    {
+      "code": "4130",
+      "label": "Ombudsman financial redress",
+      "beancount_account": "Income:Compensation:Ombudsman",
+      "recognition": "Only when a remedy is recommended/agreed and the payment is accepted or received. A recommendation is not an automatic debt or penalty."
+    },
+    {
+      "code": "4140",
+      "label": "Court-awarded damages",
+      "beancount_account": "Income:Compensation:Court",
+      "recognition": "Only under a judgment or recorded settlement; link the order/agreement."
+    },
+    {
+      "code": "4150",
+      "label": "Court-awarded litigation costs",
+      "beancount_account": "Income:Costs:Litigation",
+      "recognition": "Only where a court costs order or rule permits recovery. CPR 46.5 LiP costs are not a general pre-action hourly tariff."
+    },
+    {
+      "code": "4160",
+      "label": "Other agreed settlement / goodwill",
+      "beancount_account": "Income:Compensation:Settlement",
+      "recognition": "Only once the payer has made a clear written offer/acceptance or payment; record whether it is full and final."
+    },
+    {
+      "code": "4190",
+      "label": "Unclassified cheque / receipt (suspense)",
+      "beancount_account": "Memo:Receipts:Unclassified",
+      "recognition": "Temporary memorandum classification only. Reconcile the remittance advice, cheque date, payee, bank clearance and reason before posting to an income account."
+    },
+    {
+      "code": "5100",
+      "label": "Record searches, copies and disclosure fees",
+      "beancount_account": "Expenses:Disclosure:Other",
+      "recognition": "Actual paid or payable supplier cost, backed by an invoice/receipt. Claimability is assessed separately; do not assume recovery."
+    },
+    {
+      "code": "5110",
+      "label": "Postage, copying and delivery",
+      "beancount_account": "Expenses:Postage",
+      "recognition": "Actual evidenced cost; avoid double counting where included in a supplier fee."
+    },
+    {
+      "code": "5120",
+      "label": "Court fees and filing disbursements",
+      "beancount_account": "Expenses:Court:Fees",
+      "recognition": "Actual fee evidenced by court receipt. Recoverability depends on the applicable order/rules."
+    },
+    {
+      "code": "5130",
+      "label": "Travel and other direct disbursements",
+      "beancount_account": "Expenses:Disbursements",
+      "recognition": "Actual and reasonable spend with receipt/record; recoverability must be independently assessed."
+    },
+    {
+      "code": "9900",
+      "label": "Evidence / conduct event — unpriced",
+      "beancount_account": "MEMORANDUM ONLY — no Beancount posting",
+      "recognition": "A non-monetary event or imported tracker row. Never included in claimed, receivable or income totals."
+    },
+    {
+      "code": "9910",
+      "label": "Proposed or disputed demand — memorandum",
+      "beancount_account": "MEMORANDUM ONLY — no Beancount posting",
+      "recognition": "A proposed amount that has not been accepted, awarded or otherwise become an enforceable debt. It is not a debtor balance."
+    }
+  ],
+  "remedies": [
+    {
+      "id": "foia",
+      "name": "FOIA 2000 access and enforcement",
+      "money": "No automatic compensation or requester hourly fee for late response, refusal or chasing time. FOIA section 12 cost-limit staff-time figures are a different calculation: the Fees Regulations use £25/hour of authority staff time, with £450 (18 hours) for most authorities and £600 (24 hours) for central government. This is the authority's cost-limit calculation, not a requester compensation rate.",
+      "route": "Ask the authority to review; complain to the Information Commission (ICO); consider a First-tier Tribunal appeal from a decision notice. The regulator can require compliance in an appropriate case but does not award requester compensation for an FOIA breach.",
+      "time_limit": "FOIA response normally within 20 working days. The ICO asks for complaints within six weeks of the final response or last substantive contact; this is regulator guidance, not a statutory limitation period. Tribunal appeal normally 28 days from the decision notice.",
+      "evidence": "Original request and receipt date, statutory regime, any extension/clarification/fee notice, response and refusal, internal review or attempts to resolve, ICO correspondence, and proof of any separate loss.",
+      "sources": [
+        {
+          "label": "FOIA section 10",
+          "url": "https://www.legislation.gov.uk/ukpga/2000/36/section/10"
+        },
+        {
+          "label": "FOIA section 50",
+          "url": "https://www.legislation.gov.uk/ukpga/2000/36/section/50"
+        },
+        {
+          "label": "ICO: section 17 refusal notices and internal review",
+          "url": "https://ico.org.uk/for-organisations/foi/freedom-of-information-and-environmental-information-regulations/section-17-refusing-a-request-writing-a-refusal-notice/"
+        },
+        {
+          "label": "ICO: what to expect from an FOI/EIR complaint",
+          "url": "https://ico.org.uk/make-a-complaint/foi-and-eir-complaints/what-to-expect-from-the-ico-when-making-an-foi-or-eir-complaint/"
+        },
+        {
+          "label": "Appeal against the Commissioner's decision",
+          "url": "https://www.gov.uk/guidance/information-rights-appeal-against-the-commissioners-decision"
+        },
+        {
+          "label": "Freedom of Information and Data Protection (Appropriate Limit and Fees) Regulations 2004, regulation 4",
+          "url": "https://www.legislation.gov.uk/uksi/2004/3244/regulation/4"
+        },
+        {
+          "label": "ICO: section 12 cost limits",
+          "url": "https://ico.org.uk/for-organisations/foi/freedom-of-information-and-environmental-information-regulations/section-12-costs-of-compliance-exceeds-appropriate-limit/"
+        }
+      ]
+    },
+    {
+      "id": "eir",
+      "name": "Environmental Information Regulations 2004",
+      "money": "No automatic monetary penalty payable to the requester for delay alone. A remedy may arise from a separate established cause of action or an Ombudsman/service scheme.",
+      "route": "Regulation 5 response; regulation 7 extension only where the complexity/volume test is met; regulation 11 representations/internal review; Information Commission; First-tier Tribunal appeal where available.",
+      "time_limit": "Normally 20 working days; may extend to 40 for complexity and volume. EIR regulation 11 representations are normally within 40 working days of the believed failure and the authority's decision is due within 40 working days of the representations.",
+      "evidence": "Environmental character of information, request/receipt, applicable extension notice, response, internal representations and outcome, ICO/Tribunal dates.",
+      "sources": [
+        {
+          "label": "EIR regulation 5",
+          "url": "https://www.legislation.gov.uk/uksi/2004/3391/regulation/5"
+        },
+        {
+          "label": "EIR regulation 7",
+          "url": "https://www.legislation.gov.uk/uksi/2004/3391/regulation/7"
+        },
+        {
+          "label": "EIR regulation 11",
+          "url": "https://www.legislation.gov.uk/uksi/2004/3391/regulation/11"
+        },
+        {
+          "label": "ICO: internal reviews under the EIR",
+          "url": "https://ico.org.uk/for-organisations/foi/freedom-of-information-and-environmental-information-regulations/internal-reviews-under-the-environmental-information-regulations-eir/"
+        }
+      ]
+    },
+    {
+      "id": "uk-gdpr",
+      "name": "UK GDPR subject access and compensation",
+      "money": "Article 82 / DPA 2018 section 168 allow compensation for material or non-material damage (including distress) caused by an infringement. The amount is compensatory, not a penalty or fixed hourly tariff; prove infringement, damage and causation.",
+      "route": "First establish the controller/processor, data subject, applicable regime and infringement; complain to the regulator if appropriate; pursue any Article 82 claim through settlement or court proceedings.",
+      "time_limit": "Subject access normally one month, with a possible extension of up to two further months in qualifying cases and proper notice. Limitation for a compensation claim needs individual assessment; do not infer it from the SAR deadline.",
+      "evidence": "The actual personal data, request and receipt date, controller's response/extension/clarification, precise processing infringement, causal link, evidence of financial loss or distress, mitigation and supporting records.",
+      "sources": [
+        {
+          "label": "UK GDPR Article 82",
+          "url": "https://www.legislation.gov.uk/eur/2016/679/article/82"
+        },
+        {
+          "label": "Data Protection Act 2018 section 168",
+          "url": "https://www.legislation.gov.uk/ukpga/2018/12/section/168"
+        },
+        {
+          "label": "ICO: a guide to subject access",
+          "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/subject-access-requests/a-guide-to-subject-access/"
+        }
+      ]
+    },
+    {
+      "id": "dpa-part3",
+      "name": "DPA 2018 Part 3 law-enforcement access",
+      "money": "Do not treat as an ordinary UK GDPR SAR. Compensation and access rights require the Part 3 statutory conditions and a distinct legal analysis.",
+      "route": "Use DPA 2018 Part 3 where a competent authority processes personal data for law-enforcement purposes; check section 45 access and section 54 timing separately.",
+      "time_limit": "Section 54 generally provides one month, with a possible extension by two months on the statutory conditions and notice.",
+      "evidence": "Controller/competent-authority status, purpose of processing, request, applicable restrictions and formal response.",
+      "sources": [
+        {
+          "label": "DPA 2018 section 45",
+          "url": "https://www.legislation.gov.uk/ukpga/2018/12/section/45"
+        },
+        {
+          "label": "DPA 2018 section 54",
+          "url": "https://www.legislation.gov.uk/ukpga/2018/12/section/54"
+        }
+      ]
+    },
+    {
+      "id": "ombudsman",
+      "name": "Ombudsman / public-service redress",
+      "money": "A Welsh ombudsman may recommend proportionate financial redress for direct or indirect loss, inconvenience, distress or exceptional time and trouble where maladministration caused injustice. There is no automatic tariff; in most cases apology/explanation may be sufficient. Recommendations are not court damages or punitive fines.",
+      "route": "Complete the body's complaints procedure first where required; then use the relevant Ombudsman (PSOW for qualifying Welsh public bodies). A court remedy may affect whether PSOW investigates.",
+      "time_limit": "PSOW generally expects complaints within one year of knowing about the issue and normally expects the body to have had about 12 weeks to give a final response; check current factsheet and exceptions for the matter.",
+      "evidence": "Complaint and final response, chronology, maladministration, specific injustice caused, actual time spent beyond what is usually expected, out-of-pocket loss and why another remedy is not suitable.",
+      "sources": [
+        {
+          "label": "PSOW: Remedies",
+          "url": "https://www.ombudsman.wales/fact-sheets/remedies/"
+        },
+        {
+          "label": "PSOW: Financial redress",
+          "url": "https://www.ombudsman.wales/fact-sheets/financial-redress/"
+        },
+        {
+          "label": "PSOW: Complaint procedure",
+          "url": "https://www.ombudsman.wales/fact-sheets/complaints-against-public-bodies-our-procedure/"
+        },
+        {
+          "label": "PSOW: Legal action and complaint route",
+          "url": "https://www.ombudsman.wales/fact-sheets/what-happens-if-you-can-take-legal-action-in-respect-of-the-matters-you-are-complaining-about/"
+        }
+      ]
+    },
+    {
+      "id": "water-gss",
+      "name": "Water company Guaranteed Standards Scheme (Wales)",
+      "money": "For a qualifying written complaint about water/sewerage services not fully answered within 10 working days, the published minimum payment in Wales is £20. Additional late-payment amounts may apply under the scheme. It is not a general FOI/SAR tariff; verify that the complaint and trigger fit the scheme and no exception applies.",
+      "route": "Match the cheque/remittance advice to the specific complaint and relevant GSS standard; escalate to stage two and CCW as appropriate. Record any payment already received to prevent double recovery.",
+      "time_limit": "Usually 10 working days to answer the written complaint. If a GSS payment is due but not paid within the scheme period, a further £10 may be claimable if requested within three months (check current scheme wording and any exceptions).",
+      "evidence": "Written complaint, proof of receipt, complaint subject, full reply date/content, cheque/remittance advice, cheque date, banking/clearance, and whether the complaint was about water/sewerage services rather than an information-access request alone.",
+      "sources": [
+        {
+          "label": "CCW: guaranteed standards",
+          "url": "https://www.ccw.org.uk/faq/what-standards-are-guaranteed-by-water-and-sewerage-companies/"
+        },
+        {
+          "label": "Ofwat: standards of service and Wales payment table",
+          "url": "https://www.ofwat.gov.uk/households/supply-and-standards/standards-of-service/"
+        },
+        {
+          "label": "CCW: making a complaint",
+          "url": "https://www.ccw.org.uk/advice-and-support/make-a-complaint/"
+        }
+      ]
+    },
+    {
+      "id": "cpr-lip",
+      "name": "Litigant-in-person costs (CPR 46.5 / PD46)",
+      "money": "£24/hour is the current default rate only for time reasonably spent on recoverable litigation work where a court orders the LiP's costs and financial loss is not proved. Proven financial loss may be used instead. The total is capped at two-thirds of what would have been allowed for a represented party (apart from disbursements), with reasonableness/proportionality assessment. Not a pre-action FOI-chasing tariff.",
+      "route": "Keep contemporaneous time records by litigation task; identify what work would have been recoverable if done by a lawyer; provide evidence; claim only when the procedural/costs basis exists and subject to any court order.",
+      "time_limit": "Costs are dealt with within the relevant proceedings/costs assessment timetable. This is not a standalone civil cause of action or automatic right to bill an institution.",
+      "evidence": "Court order or costs basis, date/task/minutes, why task was recoverable, actual financial-loss evidence if claimed, comparable represented-party costs for the two-thirds cap, and receipts for disbursements.",
+      "sources": [
+        {
+          "label": "CPR 46.5",
+          "url": "https://www.legislation.gov.uk/uksi/1998/3132/part/46/crossheading/costs-payable-by-or-to-particular-persons"
+        },
+        {
+          "label": "Practice Direction 46 paragraph 3.4",
+          "url": "https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part-46-costs-special-cases/practice-direction-46-costs-special-cases"
+        }
+      ]
+    },
+    {
+      "id": "gss-complaint",
+      "name": "Other statutory / contractual guaranteed payments",
+      "money": "A guaranteed payment is payable only when the exact statute, licence condition, contract term or published scheme applies and its trigger is proved. Store each scheme and institution-specific amount as its own rule; do not reuse the water £20 figure for other bodies.",
+      "route": "Identify the exact governing scheme, liable entity, qualifying event, exceptions, payment deadline and any appeal/complaint route.",
+      "time_limit": "Scheme-specific. Record the source version and calculate only after confirming the applicable date and customer/service category.",
+      "evidence": "The relevant scheme and version, service/customer category, qualifying event, due date, exceptions and proof of payment/underpayment.",
+      "sources": [
+        {
+          "label": "Ofwat: standards of service",
+          "url": "https://www.ofwat.gov.uk/households/supply-and-standards/standards-of-service/"
+        }
+      ]
+    },
+    {
+      "id": "misfeasance",
+      "name": "Misfeasance in public office (exceptional civil tort)",
+      "money": "Potential damages only if all demanding elements and causation/loss are proved. It is not established by delay, error, inaccurate statements or non-disclosure alone.",
+      "route": "Specialist legal assessment of the identified public officer's exercise/abuse of public power, deliberate bad-faith mental element and probable injury. Do not assign liability to an institution solely because its response is unsatisfactory.",
+      "time_limit": "Limitation and defendant identity require specialist advice; do not use a general six-year date without checking the facts and any statutory bars.",
+      "evidence": "Identified public officer and power, unlawful deliberate act/omission, knowledge or recklessness as to unlawfulness, bad faith, knowledge/recklessness as to probable injury, and causally connected loss.",
+      "sources": [
+        {
+          "label": "Three Rivers District Council v Bank of England [2001] UKHL 16",
+          "url": "https://www.bailii.org/uk/cases/UKHL/2001/16.html"
+        }
+      ]
+    },
+    {
+      "id": "foia-s77",
+      "name": "FOIA section 77 — offence concerning record interference",
+      "money": "Criminal penalty is imposed by the court; it is not a fine or compensation payable to the requester. A late disclosure or a silent file transfer does not itself prove the offence.",
+      "route": "Preserve evidence and refer to the Information Commission or appropriate prosecuting authority only where there is evidence that, after a qualifying request, a covered person altered, defaced, blocked, erased, destroyed or concealed a record with intent to prevent disclosure.",
+      "time_limit": "The offence has specific statutory conditions; a prosecutor/Commissioner should assess the prosecution time limit. Do not assume a civil limitation period or turn an allegation into an invoice.",
+      "evidence": "Request date, entitlement to the information, record existence/control, act of alteration/destruction/concealment, actor's role and evidence of the specific intention to prevent disclosure.",
+      "sources": [
+        {
+          "label": "FOIA section 77",
+          "url": "https://www.legislation.gov.uk/ukpga/2000/36/section/77"
+        }
+      ]
+    },
+    {
+      "id": "human-rights",
+      "name": "Human Rights Act 1998 claim",
+      "money": "Damages are available only where a public authority acted unlawfully under a Convention right and the claimant is a victim; damages are awarded only where necessary to afford just satisfaction. Not a general FOI compensation route.",
+      "route": "Identify the specific Convention right, unlawful public-authority act, victim status and a remedy not already adequately provided; legal advice urgently required.",
+      "time_limit": "Proceedings normally within one year of the act, but the court may allow longer if equitable; procedural rules may impose stricter limits.",
+      "evidence": "Specific right, public authority, act/omission, victim status, causation, prejudice and limitation analysis.",
+      "sources": [
+        {
+          "label": "Human Rights Act 1998 section 7",
+          "url": "https://www.legislation.gov.uk/ukpga/1998/42/section/7"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "name": "Limitation and concealed facts — control, not a claim head",
+      "money": "Limitation rules affect when a claim can be brought; they do not themselves create damages or prove concealment.",
+      "route": "Record accrual date, discovery date, reasonable-diligence question, cause of action, defendant and any statutory longstop/exclusion. Limitation Act 1980 section 32 may postpone commencement for fraud/deliberate concealment/mistake in specified actions, but contains important exceptions (including property-related exclusions) and needs legal analysis.",
+      "time_limit": "Many simple contract and tort claims have a six-year period, but this is not universal. HRA claims usually have a one-year period. Tribunal/ICO/ombudsman/judicial-review times are separate and may be much shorter.",
+      "evidence": "Date each actionable loss arose, knowledge/discovery, what was concealed and by whom, when it could reasonably have been discovered, and any property/longstop/statutory exclusion.",
+      "sources": [
+        {
+          "label": "Limitation Act 1980 section 2",
+          "url": "https://www.legislation.gov.uk/ukpga/1980/58/section/2"
+        },
+        {
+          "label": "Limitation Act 1980 section 32",
+          "url": "https://www.legislation.gov.uk/ukpga/1980/58/section/32"
+        },
+        {
+          "label": "Human Rights Act 1998 section 7",
+          "url": "https://www.legislation.gov.uk/ukpga/1998/42/section/7"
+        }
+      ]
+    },
+    {
+      "id": "small-claims",
+      "name": "Small claims track — procedure, not a cause of action",
+      "money": "Usually the normal track for qualifying claims up to £10,000 (subject to exceptions and allocation rules). A claimant still needs an enforceable debt or cause of action. Costs are tightly limited, so do not add lawyer-rate time or all research time to a claim.",
+      "route": "Pre-action protocol/letter before claim as applicable, establish defendant and cause of action, quantify evidence-backed remedy, issue claim only after limitation and merits review.",
+      "time_limit": "The claim's limitation period applies; the track allocation threshold is not a limitation date and does not create liability.",
+      "evidence": "Legal cause of action, proper defendant, facts, causation, loss calculation, mitigation, pre-action correspondence and limitation check.",
+      "sources": [
+        {
+          "label": "CPR Part 27 — small claims track and costs",
+          "url": "https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part27"
+        }
+      ]
+    }
+  ]
+}

@@ -17,7 +17,9 @@
     "For UK central government maladministration, consider PHSO only after the body's complaint process; government department referrals normally require an MP and usually within one year. PHSO financial-remedy bands are discretionary guidance for proven injustice, not a requester tariff.",
     "Police complaint oversight through the IOPC is not a compensation route. A money claim must be addressed to the force and have an independent civil cause of action.",
     "Judicial review is urgent: CPR 54.5 requires filing promptly and no later than 3 months after grounds first arose (unless another enactment specifies otherwise); promptness may require earlier filing. A pre-action letter does not pause the clock.",
-    "A public-law decision being unlawful does not by itself create a standalone damages right. Damages in judicial review require an independent private-law or statutory cause of action and are ancillary to public-law relief."
+    "A public-law decision being unlawful does not by itself create a standalone damages right. Damages in judicial review require an independent private-law or statutory cause of action and are ancillary to public-law relief.",
+    "For HMLR, distinguish (a) ICR service-failure redress from (b) statutory Schedule 8 indemnity for listed register/search/copy/document mistakes causing loss; neither is a general remedy for a slow FOI/SAR.",
+    "An error in a deed submitted to HMLR is not automatically a mistake in the register: check whether the register accurately reflects the deed that was lodged. Schedule 8 has its own six-year knowledge-based limitation rule as described in HMLR Practice Guide 39; record knowledge separately."
   ],
   "nominal_codes": [
     {
@@ -431,6 +433,50 @@
         {
           "label": "The Judge Over Your Shoulder — public-law damages are not standalone",
           "url": "https://assets.publishing.service.gov.uk/media/63568bca8fa8f557cc0b8f97/The_Judge_Over_Your_Shoulder_accessible_PDF.pdf"
+        }
+      ]
+    },
+    {
+      "id": "hmlr-icr",
+      "name": "HM Land Registry — two-stage complaint and Independent Complaints Reviewer",
+      "money": "HMLR's Independent Complaints Reviewer can instruct HMLR to make consolatory payments and consider compensatory payments for service failures/problems caused by HMLR. This is discretionary complaint redress, not a fixed tariff or compensation for every delayed SAR/FOI. The ICR cannot overturn HMLR's land-registration decisions or determine legal points.",
+      "route": "Complete HMLR's two-stage complaint process first. Stage 1 aims for a full response within 20 working days; at Stage 2 a senior specialist reviews the complaint. If still dissatisfied, refer eligible service-standard failures or problems caused by HMLR's actions to the independent ICR. If dissatisfied with the ICR outcome, an MP may refer the complaint to the Public Service Ombudsman. For information-rights / personal-data issues, the ICO remains a separate route; for challenges to registration decisions, consider the Land Registration Division / court or judicial review as appropriate.",
+      "time_limit": "HMLR aims to respond at Stage 1 within 20 working days; check its current complaints policy for Stage 2 and ICR time limits. Do not treat this internal target as a civil limitation period or as extending judicial-review deadlines.",
+      "evidence": "HMLR complaint references and both stage decisions, dated service failure, relevant published service standard, impact/injustice, actual financial loss or exceptional time and trouble, requested remedy, ICR correspondence and any separate information-rights or land-registration decision.",
+      "sources": [
+        {
+          "label": "HM Land Registry complaints procedure",
+          "url": "https://www.gov.uk/government/organisations/land-registry/about/complaints-procedure"
+        },
+        {
+          "label": "HM Land Registry Customer Care Review Report and Recommendations 2025 — ICR powers",
+          "url": "https://www.gov.uk/government/publications/customer-care-review-report-2025/hm-land-registry-customer-care-review-report-and-recommendations-2025"
+        },
+        {
+          "label": "Independent Complaints Reviewer for HM Land Registry",
+          "url": "https://www.icrev.org.uk/"
+        }
+      ]
+    },
+    {
+      "id": "hmlr-schedule8",
+      "name": "HM Land Registry — Land Registration Act 2002 Schedule 8 indemnity",
+      "money": "A person who suffers loss because of a listed event may be entitled to indemnity from the registrar. Grounds include rectification, a register mistake whose correction would involve rectification, errors in an official search or official copy, certain mistakes in non-original documents referred to in the register, loss/destruction of lodged documents and specified failures under section 50. A mistake includes something mistakenly omitted as well as included. This is a statutory indemnity for loss, not a penalty and not redress for an ordinary FOI/SAR delay. The scheme can apply even where HMLR was not at fault.",
+      "route": "First identify the actual loss and match it to a Schedule 8 paragraph 1 category. Separate a mistake in the register from an error in a deed submitted for registration: if the register accurately reflects the deed lodged, an error in the deed itself is not automatically a mistake in the register. A register mistake may need a decision about rectification before entitlement arises. Consider Practice Guide 39 and obtain specialist land-registration advice before making a claim or litigation step.",
+      "time_limit": "Schedule 8 paragraph 8 treats an indemnity liability as a simple contract debt and says the cause of action arises when the claimant knows, or but for their own default might have known, of the claim. HMLR's Practice Guide 39 states six years from actual/constructive knowledge for a court application. This is a distinct, claim-specific clock; record the discovery date and do not assume Limitation Act section 32 applies.",
+      "evidence": "Official register entries and historical versions, official searches and copies, lodged instrument/plan and filing dates, HMLR correspondence, any rectification decision, exact mistake/omission category, proof the claimant suffered loss because of it, valuation and consequential loss evidence, date of knowledge and any relevant exclusions/defences.",
+      "sources": [
+        {
+          "label": "Land Registration Act 2002 Schedule 8 — indemnities",
+          "url": "https://www.legislation.gov.uk/ukpga/2002/9/schedule/8"
+        },
+        {
+          "label": "HM Land Registry Practice Guide 39 — rectification and indemnity (updated 1 June 2026)",
+          "url": "https://www.gov.uk/government/publications/rectification-and-indemnity-pg39/practice-guide-39-rectification-and-indemnity"
+        },
+        {
+          "label": "Land Registration Act 2002 explanatory notes — Schedule 8 time limits",
+          "url": "https://www.legislation.gov.uk/ukpga/2002/9/notes/division/4/20"
         }
       ]
     }

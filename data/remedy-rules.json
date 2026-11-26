@@ -11,7 +11,8 @@
     "A receipt, settlement, court award or confirmed statutory payment is classified separately from a proposed claim.",
     "No delay, late disclosure, narrow interpretation, failed search or refusal is labelled fraud or deliberate concealment without evidence of the required elements.",
     "A limitation date must be verified for the particular cause of action. Do not rely on Limitation Act 1980 section 32 as an automatic extension.",
-    "The 1987/1989 historical redress memorandum and its separate reopening gate are outside this workbench."
+    "The 1987/1989 historical redress memorandum and its separate reopening gate are outside this workbench.",
+    "FOIA section 12 cost calculation is a separate authority-side measure: £25 per staff hour and the appropriate limit (£450 for most public authorities, £600 for central government). It is not a requester's hourly rate or compensation."
   ],
   "nominal_codes": [
     {
@@ -103,7 +104,7 @@
     {
       "id": "foia",
       "name": "FOIA 2000 access and enforcement",
-      "money": "No automatic compensation or requester hourly fee for late response, refusal or chasing time.",
+      "money": "No automatic compensation or requester hourly fee for late response, refusal or chasing time. FOIA section 12 cost-limit staff-time figures are a different calculation: the Fees Regulations use £25/hour of authority staff time, with £450 (18 hours) for most authorities and £600 (24 hours) for central government. This is the authority's cost-limit calculation, not a requester compensation rate.",
       "route": "Ask the authority to review; complain to the Information Commission (ICO); consider a First-tier Tribunal appeal from a decision notice. The regulator can require compliance in an appropriate case but does not award requester compensation for an FOIA breach.",
       "time_limit": "FOIA response normally within 20 working days. The ICO asks for complaints within six weeks of the final response or last substantive contact; this is regulator guidance, not a statutory limitation period. Tribunal appeal normally 28 days from the decision notice.",
       "evidence": "Original request and receipt date, statutory regime, any extension/clarification/fee notice, response and refusal, internal review or attempts to resolve, ICO correspondence, and proof of any separate loss.",
@@ -127,6 +128,14 @@
         {
           "label": "Appeal against the Commissioner's decision",
           "url": "https://www.gov.uk/guidance/information-rights-appeal-against-the-commissioners-decision"
+        },
+        {
+          "label": "Freedom of Information and Data Protection (Appropriate Limit and Fees) Regulations 2004, regulation 4",
+          "url": "https://www.legislation.gov.uk/uksi/2004/3244/regulation/4"
+        },
+        {
+          "label": "ICO: section 12 cost limits",
+          "url": "https://ico.org.uk/for-organisations/foi/freedom-of-information-and-environmental-information-regulations/section-12-costs-of-compliance-exceeds-appropriate-limit/"
         }
       ]
     },

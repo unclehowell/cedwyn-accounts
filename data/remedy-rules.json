@@ -15,7 +15,9 @@
     "FOIA section 12 cost calculation is a separate authority-side measure: £25 per staff hour and the appropriate limit (£450 for most public authorities, £600 for central government). It is not a requester's hourly rate or compensation.",
     "There is no general half-solicitor-rate entitlement for private citizens. The £24 litigant-in-person rate is the specific CPR 46.5 / PD46 litigation-costs rule, not a requester hourly tariff.",
     "For UK central government maladministration, consider PHSO only after the body's complaint process; government department referrals normally require an MP and usually within one year. PHSO financial-remedy bands are discretionary guidance for proven injustice, not a requester tariff.",
-    "Police complaint oversight through the IOPC is not a compensation route. A money claim must be addressed to the force and have an independent civil cause of action."
+    "Police complaint oversight through the IOPC is not a compensation route. A money claim must be addressed to the force and have an independent civil cause of action.",
+    "Judicial review is urgent: CPR 54.5 requires filing promptly and no later than 3 months after grounds first arose (unless another enactment specifies otherwise); promptness may require earlier filing. A pre-action letter does not pause the clock.",
+    "A public-law decision being unlawful does not by itself create a standalone damages right. Damages in judicial review require an independent private-law or statutory cause of action and are ancillary to public-law relief."
   ],
   "nominal_codes": [
     {
@@ -403,6 +405,32 @@
         {
           "label": "IOPC FAQs — compensation claims",
           "url": "https://www.policeconduct.gov.uk/frequently-asked-questions"
+        }
+      ]
+    },
+    {
+      "id": "judicial-review",
+      "name": "Judicial review — urgent public-law remedy",
+      "money": "Judicial review can seek a quashing order, mandatory or prohibiting order, declaration or other public-law relief. An unlawful public-law decision or delay does not, by itself, create a standalone right to damages. Damages may be included only where there is an independent entitlement (for example a private-law cause of action or Human Rights Act claim) and the court grants them as an ancillary remedy. This is not a penalty or substitute for the FOI/EIR appeal route.",
+      "route": "Identify the precise reviewable decision, act or continuing failure by a public body; standing/sufficient interest; public-law ground; remedy sought; and whether an adequate alternative statutory route exists. For FOI/EIR access disputes, the ICO and First-tier Tribunal are usually the specialist route. Seek specialist public-law advice urgently before issuing.",
+      "time_limit": "CPR 54.5 requires a claim to be filed promptly and in any event within 3 months after the grounds first arose, unless a different enactment specifies another period. The duty to act promptly applies even inside the three-month outer limit; the pre-action protocol does not suspend or extend the deadline.",
+      "evidence": "The exact decision or ongoing omission, date grounds first arose, when any later disclosure occurred, full request/complaint/review chronology, evidence of continuing consequences, public-law ground, standing, alternative-remedy analysis and the particular relief sought. Record a separate civil limitation analysis for any damages claim.",
+      "sources": [
+        {
+          "label": "CPR Part 54 — Judicial Review",
+          "url": "https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part54"
+        },
+        {
+          "label": "CPR 54.5 — Time limit for filing a claim form",
+          "url": "https://www.legislation.gov.uk/uksi/1998/3132/rule/54.5"
+        },
+        {
+          "label": "Judicial Review Pre-Action Protocol",
+          "url": "https://www.justice.gov.uk/courts/procedure-rules/civil/protocol/prot_jrv"
+        },
+        {
+          "label": "The Judge Over Your Shoulder — public-law damages are not standalone",
+          "url": "https://assets.publishing.service.gov.uk/media/63568bca8fa8f557cc0b8f97/The_Judge_Over_Your_Shoulder_accessible_PDF.pdf"
         }
       ]
     }

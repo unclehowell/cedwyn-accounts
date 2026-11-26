@@ -361,9 +361,10 @@
     ];
     state.entries.forEach(function (e) {
       if (!Number.isFinite(Number(e.amount)) || Number(e.amount) === 0) return;
-      var date = /^\d{4}-\d{2}-\d{2}$/.test(e.date || "") ? e.date : dateNow();
+      var date = /^\d{4}-\d{2}-\d{2}$/.test(e.date || "") ? e.date : "";
       var account = recognized(e) ? "Memo:Claims:Confirmed" :
         (e.status === "cheque-received" || e.status === "receipt-unclassified") ? "Memo:Receipts:Unclassified" : "Memo:Claims:Proposed";
+      if (!date) { s.push("; SKIPPED — unresolved event date: " + String(e.institution || "Unknown") + " / " + String(e.title || "Redress item") + ". Enter a verified date before ledger export."); s.push(""); return; }
       var value = Math.abs(Number(e.amount)).toFixed(2);
       s.push(date + ' * "' + String(e.institution || "Unknown").replace(/"/g, '\\"') + '" "' + String(e.title || "Redress item").replace(/"/g, '\\"') + '"');
       s.push('  nominal_code: "' + String(e.nominalCode || "9910") + '"');
@@ -393,7 +394,7 @@
     var total = chosen.reduce(function (sum, e) { return sum + (Number(e.amount) || 0); }, 0);
     var title = mode === "established" ? "Payment request — established amounts" : "Proposed redress schedule — not an admitted debt";
     var bodyRows = chosen.map(function (e) {
-      return "<tr><td>" + esc(e.date || "Date to confirm") + "</td><td>" + esc(e.reference || "") + "</td><td>" + esc(e.title) + "<br><small>" + esc(e.description || e.notes || "") + "</small></td><td>" + esc(e.status) + "</td><td>" + money(e.amount) + "</td></tr>";
+      return "<tr><td>" + esc(e.date || "Date to confirm") + "</td><td>" + esc(e.reference || "") + "</td><td>" + esc(e.title) + "<br><small>" + esc(e.description || e.notes || "") + "</small></td><td>" + esc(e.nominalCode || "9900") + "</td><td>" + esc(e.status) + "</td><td>" + money(e.amount) + "</td></tr>";
     }).join("");
     var legal = mode === "established"
       ? "The items below are included because the register records an established entitlement and supporting evidence. Please make payment by the date agreed or required by the applicable scheme/order. If you dispute any item, identify the precise basis and supporting record."
@@ -403,7 +404,7 @@
     w.document.open();
     w.document.write("<!doctype html><html><head><meta charset='utf-8'><title>" + esc(title) + "</title><style>body{font:14px/1.5 system-ui,Arial,sans-serif;max-width:900px;margin:32px auto;padding:0 20px;color:#18202a}h1{font-size:22px}table{width:100%;border-collapse:collapse;margin:22px 0}th,td{border:1px solid #bbb;padding:8px;text-align:left;vertical-align:top}th{background:#eee}.total{text-align:right;font-size:18px;font-weight:bold}.notice{border:1px solid #999;padding:12px;background:#f7f7f7}.small{color:#555;font-size:12px}@media print{button{display:none}}</style></head><body>");
     w.document.write("<h1>" + esc(title) + "</h1><p><b>To:</b> " + esc(recipient) + "</p><p><b>Prepared:</b> " + dateNow() + "</p><div class='notice'>" + esc(legal) + "</div>");
-    w.document.write("<table><thead><tr><th>Date</th><th>Reference</th><th>Item / description</th><th>Status</th><th>Amount</th></tr></thead><tbody>" + bodyRows + "</tbody></table>");
+    w.document.write("<table><thead><tr><th>Date</th><th>Reference</th><th>Item / description</th><th>Nominal code</th><th>Status</th><th>Amount</th></tr></thead><tbody>" + bodyRows + "</tbody></table>");
     w.document.write("<p class='total'>Total recorded: " + money(total) + "</p><p class='small'>Prepared from a local working register. Review evidence, limitation and the applicable legal route before sending. This document has not been sent. It is not a tax invoice. Nominal codes are internal accounting labels, not statutory tariffs.</p><p><button onclick='window.print()'>Print / Save as PDF</button></p></body></html>");
     w.document.close();
   }

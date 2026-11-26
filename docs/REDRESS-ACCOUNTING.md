@@ -52,7 +52,23 @@ The IOPC expressly says it does not handle police compensation claims. Police co
 
 Sources: [IOPC complaint process and financial claims](https://www.policeconduct.gov.uk/complaints/guide-to-complaints-process); [IOPC FAQs](https://www.policeconduct.gov.uk/frequently-asked-questions).
 
-### 6. Water-company Guaranteed Standards Scheme (Wales)
+### 6. HM Land Registry — Independent Complaints Reviewer
+
+HM Land Registry has a two-stage internal complaint process. Stage 1 aims for a full response within 20 working days; Stage 2 is reviewed by a senior specialist. After both stages, eligible service-standard failures or problems caused by HMLR actions may be taken to its independent ICR. The 2025 Customer Care Review says the ICR can instruct HMLR to make consolatory payments and consider compensatory payments. The ICR cannot overturn land-registration decisions or determine legal points. If dissatisfied with the ICR outcome, an MP may refer the complaint to the Public Service Ombudsman. This route concerns service complaint redress; it is separate from the ICO and the statutory land-registration indemnity.
+
+Sources: [HMLR complaints procedure](https://www.gov.uk/government/organisations/land-registry/about/complaints-procedure); [HMLR Customer Care Review 2025](https://www.gov.uk/government/publications/customer-care-review-report-2025/hm-land-registry-customer-care-review-report-and-recommendations-2025).
+
+### 7. HM Land Registry — Land Registration Act 2002 Schedule 8 indemnity
+
+Schedule 8 may provide indemnity where a person suffers loss because of a listed event, including rectification, a register mistake whose correction would involve rectification, a mistake in an official search or official copy, certain mistakes in a non-original document referred to in the register, loss/destruction of a lodged document or specified failures under section 50. A mistake includes a mistaken omission. HMLR says a claimant need not prove HMLR caused the mistake or was at fault. This is compensation for a qualifying loss, not an FOI/SAR delay or punitive penalty.
+
+**Critical deed/register distinction:** HMLR's Practice Guide 39 says there is no mistake in the register where it accurately reflects the provisions of a deed submitted for registration, even if the deed itself does not reflect the agreement reached between the parties. Schedule 4 cannot be used to correct the deed itself; a court or, in a more limited range of documents, the Land Registration Division of the First-tier Tribunal may have power. For register mistakes, HMLR says the indemnity entitlement may depend on the relevant rectification decision.
+
+Schedule 8 paragraph 8 treats the liability as a simple contract debt and says the cause of action arises when the claimant knows, or but for their own default might have known, of the claim. HMLR Practice Guide 39 states a six-year period from actual or constructive knowledge for a court application. This is a separate knowledge-based clock; identify the alleged mistake, the listed category, causation, actual loss, discovery date and any exclusions before relying on it.
+
+Sources: [Land Registration Act 2002, Schedule 8](https://www.legislation.gov.uk/ukpga/2002/9/schedule/8); [HMLR Practice Guide 39 — updated 1 June 2026](https://www.gov.uk/government/publications/rectification-and-indemnity-pg39/practice-guide-39-rectification-and-indemnity); [Land Registration Act explanatory notes](https://www.legislation.gov.uk/ukpga/2002/9/notes/division/4/20).
+
+### 8. Water-company Guaranteed Standards Scheme (Wales)
 
 
 Ofwat's Wales table lists £20 for a written complaint not actioned on time and a £10 late-payment penalty. Citizens Advice describes the usual standard as a response within 10 working days, with the £20 payment then due within the scheme period and a further £10 potentially available if the payment is late and requested within three months. Exceptions may apply. It is a service-standard remedy, not a general FOI/SAR compensation amount.
@@ -61,13 +77,13 @@ For any personally received water-company cheque, create a local receipt entry a
 
 Sources: [Ofwat standards of service](https://www.ofwat.gov.uk/households/supply-and-standards/standards-of-service/); [Citizens Advice Wales](https://www.citizensadvice.org.uk/wales/consumer/water/complaints-about-your-water-supply/complaining-about-your-water-company/); [CCW](https://www.ccw.org.uk/faq/what-standards-are-guaranteed-by-water-and-sewerage-companies/).
 
-### 5. Court costs and small claims
+### 9. Court costs and small claims
 
 CPR 46.5 is a rule for costs within litigation where the court makes a costs order. A LiP's reasonable time may be allowed at the prescribed rate where financial loss is not proved, and the two-thirds cap applies. It is not a freestanding cause of action and does not permit a requester to invoice an institution for FOI or SAR administration. The small-claims track is a procedural allocation for qualifying claims (usually up to £10,000, subject to exceptions); it does not create liability. Costs are tightly limited on the small-claims track. Only sue where an enforceable debt or properly established cause of action exists, with proof of defendant, duty, breach, causation, loss, limitation and pre-action compliance.
 
 Sources: [CPR Part 27](https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part27); [CPR 46.5 / PD46](https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part-46-costs-special-cases/practice-direction-46-costs-special-cases).
 
-### 6. Judicial review — short and urgent public-law clock
+### 10. Judicial review — short and urgent public-law clock
 
 Judicial review may be used to challenge a reviewable public-body decision, act or failure where there is a public-law ground and no adequate alternative remedy. It can provide quashing, mandatory or prohibiting orders and declarations. It is not a general compensation route: an unlawful public-law decision does not itself create a standalone damages right. Damages can only be claimed with an independent cause of action, such as a private-law claim or a Human Rights Act claim, and are ancillary to the public-law relief.
 
@@ -75,7 +91,7 @@ CPR 54.5 requires a claim to be filed **promptly and in any event within three m
 
 Sources: [CPR Part 54](https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part54); [CPR 54.5](https://www.legislation.gov.uk/uksi/1998/3132/rule/54.5); [Judicial Review Pre-Action Protocol](https://www.justice.gov.uk/courts/procedure-rules/civil/protocol/prot_jrv); [The Judge Over Your Shoulder — damages](https://assets.publishing.service.gov.uk/media/63568bca8fa8f557cc0b8f97/The_Judge_Over_Your_Shoulder_accessible_PDF.pdf).
 
-### 7. Other civil claims and exceptional public-law torts
+### 11. Other civil claims and exceptional public-law torts
 
 Contract, negligence, breach of confidence / misuse of private information, statutory causes of action, misfeasance in public office and Human Rights Act claims each require their own legal ingredients. Do not select one solely because an institution's response was poor. Misfeasance in public office is particularly demanding: it requires proof of a public officer's bad-faith abuse of power and the requisite knowledge or recklessness as to illegality and probable injury, with causation and loss. A Human Rights Act claim requires an identified Convention right, victim status and an unlawful act by a public authority; HRA proceedings normally have a one-year period, subject to the court's equitable discretion. Section 77 FOIA is a specific criminal offence about record interference with intent to prevent disclosure; it does not create a private fine or damages claim for the requester.
 

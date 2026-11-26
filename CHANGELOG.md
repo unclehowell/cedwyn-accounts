@@ -7,8 +7,9 @@
 - Legal-route inventory and internal nominal-code map, with separate statuses for evidence-only, proposed/disputed, agreed/awarded, paid/cleared and unclassified receipts.
 - Browser-local entry register, JSON backup, CSV and Beancount memorandum exports, nominal-code report, and guarded draft schedules. No invoices or messages are sent automatically.
 - Import paths for Dartboard's FOI/EIR/SAR tracker, That Old Chestnut findings and the earlier current-costs event list. Imports are unpriced evidence leads, not findings of liability.
-- Dŵr Cymru £20 cheque seeded as an unclassified receipt pending reconciliation to the remittance advice and the exact Guaranteed Standards Scheme trigger.
+- Internal suspense code 4190 and a local receipt workflow for the Dŵr Cymru £20 cheque; personal cheque data is not preloaded into the public source.
 - Rule catalogue distinguishes CPR 46.5 / PD46's £24/hour litigant-in-person litigation costs rule from FOIA s.12's authority-side £25/hour staff-time calculation. Neither is a general hourly charge for waiting for disclosure.
+- Added PHSO discretionary redress bands, police complaint / IOPC boundary and urgent judicial-review route (promptly and no later than 3 months, subject to statutory exceptions).
 - Existing current-costs chronology retained but its misleading £24/hour valuation removed; repeated chasers are not treated as separate monetary entitlements.
 
 ### Safeguards

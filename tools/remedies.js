@@ -18,6 +18,7 @@
     });
   }
   function money(n) {
+    if (n == null || String(n).trim() === "") return "—";
     var v = Number(n);
     return Number.isFinite(v) ? "£" + v.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "—";
   }
@@ -313,7 +314,12 @@
       '<p class="note">The app does not calculate £24/hour for ordinary disclosure chasing. CPR 46.5 is available only within litigation where the court orders LiP costs; see the rule catalogue.</p></form>';
   }
   function editRecord(id) {
-    var x = state.entries.find(function (e) { return e.id === id; });
+    var isNew = id === "__new__";
+    var x = isNew ? {
+      id: "", date: dateNow(), source: "Manual local entry", status: "evidence-only",
+      amount: null, amountBasis: "not-priced", nominalCode: "9900", hours: null,
+      hourlyRate: null, limitationDate: "", loss: "", evidenceUrl: "", notes: ""
+    } : state.entries.find(function (e) { return e.id === id; });
     if (!x) return;
     el("redress-editor").innerHTML = formMarkup();
     el("redress-editor").hidden = false;
@@ -329,38 +335,16 @@
       updated.hours = updated.hours === "" ? null : Number(updated.hours);
       updated.hourlyRate = updated.hourlyRate === "" ? null : Number(updated.hourlyRate);
       if (updated.amount > 0 && updated.nominalCode === "9900" && ["candidate", "requested", "disputed"].indexOf(updated.status) >= 0) updated.nominalCode = "9910";
+      if (isNew) {
+        updated.id = "local-" + Date.now() + "-" + stableId(updated.institution + "-" + updated.title);
+        updated.source = "Manual local entry";
+      }
       updated.updatedAt = new Date().toISOString();
       upsert(updated); saveState(); el("redress-editor").hidden = true; render(); status("Entry saved locally. No ledger posting or communication was made.");
     });
     el("r-cancel").onclick = function () { el("redress-editor").hidden = true; };
   }
-  function newRecord() {
-    editRecord("__new__");
-    var f = el("redress-form");
-    if (!f) return;
-    var defaults = { id: "local-" + Date.now(), date: dateNow(), source: "Manual local entry", status: "evidence-only", amount: null, amountBasis: "not-priced", nominalCode: "9900", hours: null, hourlyRate: null, limitationDate: "", loss: "", evidenceUrl: "", notes: "" };
-    var submit = f.onsubmit;
-    f.addEventListener("submit", function (ev) {
-      /* the edit handler writes its draft; this listener only fixes the temporary key below */
-      if (f.dataset.newEntry === "1") {
-        var record = Object.assign({}, defaults);
-        ["institution", "reference", "date", "regime", "title", "status", "amount", "amountBasis", "nominalCode", "hours", "hourlyRate", "limitationDate", "evidenceUrl", "loss", "notes"].forEach(function (key) {
-          if (f.elements[key]) record[key] = f.elements[key].value;
-        });
-        record.amount = parseMoney(record.amount);
-        record.hours = record.hours === "" ? null : Number(record.hours);
-        record.hourlyRate = record.hourlyRate === "" ? null : Number(record.hourlyRate);
-        if (record.amount > 0 && record.nominalCode === "9900" && ["candidate", "requested", "disputed"].indexOf(record.status) >= 0) record.nominalCode = "9910";
-        record.id = "local-" + Date.now() + "-" + stableId(record.institution + "-" + record.title);
-        record.source = "Manual local entry";
-        upsert(record); saveState(); el("redress-editor").hidden = true; render(); status("Entry saved locally. No ledger posting or communication was made.");
-      }
-    });
-    f.dataset.newEntry = "1";
-    f.addEventListener("submit", function (ev) {
-      if (f.dataset.newEntry === "1") ev.stopImmediatePropagation();
-    }, true);
-  }
+  function newRecord() { editRecord("__new__"); }
   function removeEntry(id) {
     if (!window.confirm("Remove this local entry? Export a backup first if it matters.")) return;
     state.entries = state.entries.filter(function (e) { return e.id !== id; }); saveState(); render();
@@ -448,7 +432,7 @@
       '<div class="tools"><button class="btn" id="redress-load">Import latest 2026 source registers</button><label class="btn" for="redress-file">Upload Dartboard CSV / Chestnut JSON</label><input id="redress-file" type="file" accept=".csv,.json,application/json,text/csv" style="max-width:260px"><button class="btn" id="redress-export-json">Backup JSON</button><button class="btn" id="redress-export-csv">Export register CSV</button><button class="btn" id="redress-export-bean">Export memorandum Beancount</button></div>' +
       '<p class="note" id="redress-status" role="status" aria-live="polite"></p><p class="note" id="redress-imports"></p>' +
       '<h2>Legal remedy inventory and hardwired controls</h2><p class="note">Each route below has its own legal test, evidence requirements and time controls. There is deliberately no blanket per-hour charge or universal institutional penalty.</p><div id="redress-rules"></div>' +
-      '<p class="note">Existing supplier search/copy prices remain in the separate <a href="#quotes" onclick="document.querySelector(\\'nav button[data-t=quotes]\\').click()">Quotes, not paid</a> inventory. They are not expenses until paid and are not compensation entitlements.</p>' +
+      '<p class="note">Existing supplier search and copy prices stay in the separate Quotes, not paid inventory. They are not expenses until paid and are not compensation entitlements.</p>' +
       '<h2>2026 conduct / disclosure register</h2><div class="tools"><input id="redress-search" type="search" placeholder="Search institution, reference or finding"><select id="redress-code-filter"><option value="">All nominal codes</option>' + codeList().map(function (c) { return '<option value="' + esc(c.code) + '">' + esc(c.code + " — " + c.label) + '</option>'; }).join("") + '</select><button class="btn" id="redress-new">Add event / claim line</button></div>' +
       '<p class="note">Select entries for one institution to prepare a draft schedule. A formal payment request is enabled only for lines marked accepted, awarded or statutory-confirmed, with a value and supporting evidence.</p>' +
       '<div id="redress-editor" hidden></div>' +

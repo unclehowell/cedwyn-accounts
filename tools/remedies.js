@@ -175,7 +175,7 @@
     var rows = csvRows(text), n = 0;
     rows.forEach(function (r, i) {
       var date = r.date || "";
-      if (date && date.indexOf("2026") !== 0) return;
+      /* Every row in this curated source is a 2026 event, including unresolved date labels. */
       upsert({
         id: "current-costs-" + stableId([date, r.body, r.cause, i].join("-")),
         date: date, institution: r.body || "Institution not stated", reference: "",
@@ -185,7 +185,7 @@
         description: r.cost_type || "",
         status: "evidence-only", amount: null, amountBasis: "not-priced", nominalCode: "9900",
         hours: null, hourlyRate: null, limitationDate: "", loss: "",
-        evidenceUrl: r.source || "", notes: "Imported as an evidence lead only. Historical rate/value text is not adopted as a recoverable amount. Source amount/hours: " + (r.amount_or_hours || "not supplied") + "; source rate note: " + (r.rate || "") + "; source value: " + (r.value_gbp || "") + "."
+        evidenceUrl: /^https?:\/\//i.test(r.source || "") ? r.source : "", notes: "Imported as an evidence lead only. Historical rate/value text is not adopted as a recoverable amount. Source amount/hours: " + (r.amount_or_hours || "not supplied") + "; source rate note: " + (r.rate || "") + "; source value: " + (r.value_gbp || "") + "."
       });
       n++;
     });
@@ -297,7 +297,7 @@
       '<div class="r-grid">' +
       '<label>Institution / payer<input name="institution" required></label>' +
       '<label>Reference(s)<input name="reference" placeholder="FOI / EIR / SAR / complaint ref"></label>' +
-      '<label>Event or claim date<input name="date" type="date"></label>' +
+      '<label>Event or claim date<input name="date" type="text" placeholder="YYYY-MM-DD or date to confirm"></label>' +
       '<label>Regime / route<select name="regime"><option>FOIA</option><option>EIR</option><option>UK GDPR subject access</option><option>DPA 2018 Part 3</option><option>Water GSS</option><option>Ombudsman</option><option>CPR 46.5 litigation costs</option><option>Other civil cause of action</option><option>Unclassified receipt</option></select></label>' +
       '<label class="r-wide">Line-item description<input name="title" required placeholder="What happened, or what payment is sought"></label>' +
       '<label>Entry status<select name="status"><option value="evidence-only">Evidence only — no monetary claim</option><option value="candidate">Candidate — not yet claimed</option><option value="requested">Requested — disputed / unpaid</option><option value="disputed">Disputed amount</option><option value="statutory-confirmed">Statutory entitlement verified</option><option value="accepted">Accepted / agreed in writing</option><option value="awarded">Awarded / ordered by court</option><option value="cheque-received">Cheque received — not cleared / classified</option><option value="paid">Paid / cleared</option><option value="declined">Declined / rejected</option></select></label>' +
@@ -432,7 +432,7 @@
       '<div class="tools"><button class="btn" id="redress-load">Import latest 2026 source registers</button><label class="btn" for="redress-file">Upload Dartboard CSV / Chestnut JSON</label><input id="redress-file" type="file" accept=".csv,.json,application/json,text/csv" style="max-width:260px"><button class="btn" id="redress-export-json">Backup JSON</button><button class="btn" id="redress-export-csv">Export register CSV</button><button class="btn" id="redress-export-bean">Export memorandum Beancount</button></div>' +
       '<p class="note" id="redress-status" role="status" aria-live="polite"></p><p class="note" id="redress-imports"></p>' +
       '<h2>Legal remedy inventory and hardwired controls</h2><p class="note">Each route below has its own legal test, evidence requirements and time controls. There is deliberately no blanket per-hour charge or universal institutional penalty.</p><div id="redress-rules"></div>' +
-      '<p class="note">Existing supplier search and copy prices stay in the separate Quotes, not paid inventory. They are not expenses until paid and are not compensation entitlements.</p>' +
+      '<p class="note">Existing supplier search and copy prices stay in the separate Quotes, not paid inventory. For example, Glamorgan Archives quoted £50/hour plus VAT on 6 Nov 2026 for staff searches (estimated 1–3 hours per reference) with a digitised image of items found; its reply also points to free searchroom viewing. That is a supplier price, not a compensation rate for your own time.</p>' +
       '<h2>2026 conduct / disclosure register</h2><div class="tools"><input id="redress-search" type="search" placeholder="Search institution, reference or finding"><select id="redress-code-filter"><option value="">All nominal codes</option>' + codeList().map(function (c) { return '<option value="' + esc(c.code) + '">' + esc(c.code + " — " + c.label) + '</option>'; }).join("") + '</select><button class="btn" id="redress-new">Add event / claim line</button></div>' +
       '<p class="note">Select entries for one institution to prepare a draft schedule. A formal payment request is enabled only for lines marked accepted, awarded or statutory-confirmed, with a value and supporting evidence.</p>' +
       '<div id="redress-editor" hidden></div>' +

@@ -57,7 +57,7 @@ Sources: [IOPC complaint process and financial claims](https://www.policeconduct
 
 Ofwat's Wales table lists £20 for a written complaint not actioned on time and a £10 late-payment penalty. Citizens Advice describes the usual standard as a response within 10 working days, with the £20 payment then due within the scheme period and a further £10 potentially available if the payment is late and requested within three months. Exceptions may apply. It is a service-standard remedy, not a general FOI/SAR compensation amount.
 
-The £20 Dŵr Cymru cheque in the workbench is deliberately classified as **unallocated / suspense**. Match it to the cheque/remittance letter, underlying complaint subject, receipt date, response date, applicable GSS standard, any exception, payment date and bank clearance before moving it to GSS income. If it was for a qualifying water/sewerage written complaint, code 4100 may be appropriate; do not assume that from the amount alone.
+For the Dŵr Cymru £20 cheque mentioned in the project notes, create a local receipt entry and initially use code **4190 — unclassified receipt / suspense**. The personal cheque details are deliberately not preloaded into the public source code. Match it to the remittance letter, underlying complaint subject, receipt date, response date, applicable GSS standard, any exception, payment date and bank clearance before moving it to GSS income. If it was for a qualifying water/sewerage written complaint, code 4100 may be appropriate; do not assume that from the amount alone.
 
 Sources: [Ofwat standards of service](https://www.ofwat.gov.uk/households/supply-and-standards/standards-of-service/); [Citizens Advice Wales](https://www.citizensadvice.org.uk/wales/consumer/water/complaints-about-your-water-supply/complaining-about-your-water-company/); [CCW](https://www.ccw.org.uk/faq/what-standards-are-guaranteed-by-water-and-sewerage-companies/).
 
@@ -67,7 +67,15 @@ CPR 46.5 is a rule for costs within litigation where the court makes a costs ord
 
 Sources: [CPR Part 27](https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part27); [CPR 46.5 / PD46](https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part-46-costs-special-cases/practice-direction-46-costs-special-cases).
 
-### 6. Other civil claims and exceptional public-law torts
+### 6. Judicial review — short and urgent public-law clock
+
+Judicial review may be used to challenge a reviewable public-body decision, act or failure where there is a public-law ground and no adequate alternative remedy. It can provide quashing, mandatory or prohibiting orders and declarations. It is not a general compensation route: an unlawful public-law decision does not itself create a standalone damages right. Damages can only be claimed with an independent cause of action, such as a private-law claim or a Human Rights Act claim, and are ancillary to the public-law relief.
+
+CPR 54.5 requires a claim to be filed **promptly and in any event within three months after the grounds first arose**, unless another enactment specifies a different period. Promptness applies even inside the three-month outer limit. A pre-action letter does not pause or extend the clock. For FOI/EIR access disputes, the ICO and First-tier Tribunal are normally the specialist routes and should be checked as the adequate alternative remedies.
+
+Sources: [CPR Part 54](https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part54); [CPR 54.5](https://www.legislation.gov.uk/uksi/1998/3132/rule/54.5); [Judicial Review Pre-Action Protocol](https://www.justice.gov.uk/courts/procedure-rules/civil/protocol/prot_jrv); [The Judge Over Your Shoulder — damages](https://assets.publishing.service.gov.uk/media/63568bca8fa8f557cc0b8f97/The_Judge_Over_Your_Shoulder_accessible_PDF.pdf).
+
+### 7. Other civil claims and exceptional public-law torts
 
 Contract, negligence, breach of confidence / misuse of private information, statutory causes of action, misfeasance in public office and Human Rights Act claims each require their own legal ingredients. Do not select one solely because an institution's response was poor. Misfeasance in public office is particularly demanding: it requires proof of a public officer's bad-faith abuse of power and the requisite knowledge or recklessness as to illegality and probable injury, with causation and loss. A Human Rights Act claim requires an identified Convention right, victim status and an unlawful act by a public authority; HRA proceedings normally have a one-year period, subject to the court's equitable discretion. Section 77 FOIA is a specific criminal offence about record interference with intent to prevent disclosure; it does not create a private fine or damages claim for the requester.
 

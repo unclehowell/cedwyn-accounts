@@ -40,7 +40,20 @@ The Public Services Ombudsman for Wales can recommend a proportionate remedy whe
 
 Sources: [PSOW remedies](https://www.ombudsman.wales/fact-sheets/remedies/); [PSOW financial redress](https://www.ombudsman.wales/fact-sheets/financial-redress/); [PSOW procedure](https://www.ombudsman.wales/fact-sheets/complaints-against-public-bodies-our-procedure/).
 
-### 4. Water-company Guaranteed Standards Scheme (Wales)
+### 4. Public Service Ombudsman (UK central government)
+
+For eligible UK government departments and public bodies, the Public Service Ombudsman (PHSO) can recommend remedies where maladministration or service failure caused injustice. The PHSO's published non-financial-loss severity scale (updated 30 September 2026) ranges from £0 at level 1, £120–£550 at level 2, £600–£1,200 at level 3, £1,250–£3,700 at level 4, £3,750–£12,450 at level 5 and £12,500+ at level 6. These are discretionary Ombudsman recommendation bands, not an automatic award, private invoice or fixed sum for each month of FOI delay. Direct financial loss is assessed separately and must be evidenced. A complaint about a government department normally requires referral by an MP and should usually be referred within one year of awareness; complete the body's complaint process first. Verify PHSO jurisdiction for the named organisation and subject. This may be relevant to central bodies including the Ministry of Justice, Ministry of Defence and The National Archives, subject to the current jurisdiction list.
+
+Sources: [PHSO financial remedy](https://www.ombudsman.org.uk/handling-complaint/information-organisations-we-investigate/putting-things-right/financial-remedy); [PHSO organisations](https://www.ombudsman.org.uk/making-complaint/what-we-can-and-cant-help/government-organisations-we-can-investigate/p); [House of Commons Library — PHSO route and MP filter](https://commonslibrary.parliament.uk/research-briefings/cbp-10788/).
+
+### 5. Police complaints / IOPC — accountability, not compensation
+
+The IOPC expressly says it does not handle police compensation claims. Police complaints may lead to explanation, apology, learning or review; the IOPC may refer complaints to the force and independently investigates only the most serious and sensitive matters. A financial claim must be addressed to the police force and must rest on an independent cause of action, evidence of loss and a separate limitation assessment. A complaint about the handling of an FOI request remains an information-rights issue for the ICO, not automatically a police-conduct claim.
+
+Sources: [IOPC complaint process and financial claims](https://www.policeconduct.gov.uk/complaints/guide-to-complaints-process); [IOPC FAQs](https://www.policeconduct.gov.uk/frequently-asked-questions).
+
+### 6. Water-company Guaranteed Standards Scheme (Wales)
+
 
 Ofwat's Wales table lists £20 for a written complaint not actioned on time and a £10 late-payment penalty. Citizens Advice describes the usual standard as a response within 10 working days, with the £20 payment then due within the scheme period and a further £10 potentially available if the payment is late and requested within three months. Exceptions may apply. It is a service-standard remedy, not a general FOI/SAR compensation amount.
 

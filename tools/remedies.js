@@ -64,30 +64,7 @@
         if (parsed && Array.isArray(parsed.entries)) state = parsed;
       }
     } catch (e) { /* retain an empty local register if browser storage is unavailable */ }
-    if (!state.entries.length && !state.seeded) {
-      state.seeded = true;
-      state.entries.push({
-        id: "receipt-dwrcymru-20-unclassified",
-        date: "",
-        institution: "Dŵr Cymru Welsh Water",
-        reference: "£20 cheque — reference and date to reconcile",
-        source: "Owner-provided note",
-        regime: "Water company payment / GSS eligibility to verify",
-        title: "Cheque received — reason not yet matched",
-        description: "A £20 cheque has been received. The amount matches the published Wales GSS minimum for a qualifying late written complaint response, but the complaint subject and remittance reason must be checked before classifying it.",
-        status: "cheque-received",
-        amount: 20,
-        amountBasis: "unclassified-receipt",
-        nominalCode: "4190",
-        hours: null,
-        hourlyRate: null,
-        limitationDate: "",
-        loss: "",
-        evidenceUrl: "",
-        notes: "Do not treat as compensation for an FOI/SAR delay until the accompanying letter confirms the actual GSS standard, service complaint, due date and any exception. Confirm cheque date and bank clearance. Do not claim the same £20 twice."
-      });
-      saveState();
-    }
+
   }
   function saveState() {
     try { localStorage.setItem(STORE, JSON.stringify(state)); }

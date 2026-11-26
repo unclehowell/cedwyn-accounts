@@ -95,7 +95,7 @@ These are internal categories for this app. They are not a statutory or universa
 - Keep search/copy quotes separate from paid expenses. Never claim a quoted search fee as a loss unless it was actually incurred and is legally recoverable.
 - Record a proposed, disputed, accepted, awarded and paid amount as separate states. A proposed sum is not a debtor balance.
 - Do not label an institution's actions as fraud, concealment, deliberate suppression or government involvement solely because records emerge later or a response was delayed. Keep the primary record and the institution's explanation side by side.
-- The current-year workbench is separate from the held 1987/1989 historic redress memorandum. A new disclosure event may be a research lead; it does not itself meet the reopening threshold or alter that gate.
+- The current-year workbench is separate from the held 1987/1989 historic redress memorandum. A new disclosure event may be a research lead; it does not itself meet the reopening threshold or alter that gate. There is no general rule allowing a private citizen to charge half a solicitor's hourly rate.
 
 ## Known current inputs
 
